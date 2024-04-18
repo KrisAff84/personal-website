@@ -23,15 +23,16 @@
         }
 
         .hidden {
-            display: none;
+            display: none !important; 
         }
         
 /* Home Page */
+
         .home-section {
             color: var(--main);
             font-family: Arial;
             text-align: center;
-            font-weight: normal;    
+            font-weight: normal;
         }
         
         .home-section h1 {
@@ -43,6 +44,7 @@
             animation-fill-mode: backwards;
         }
         
+        /* Links */
         .home-section h3 {
             animation: fadeInLeftToRight 2200ms; 
             animation-delay: 200ms;
@@ -57,7 +59,10 @@
             margin-right: 20px;
         }
         
+        /* Summary */
         .home-section p {
+            font-weight: 1;
+            opacity: 0.7;
             font-size: 18px;
             margin-top: 5%;
             margin-left: 23%;
@@ -81,38 +86,47 @@
 
 /* Project Menu Page */
         
-        .project-category {
+        #project-container {
             cursor: pointer;
-            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            width: 100%;
+        }
+
+        .project-category {
+            /* cursor: pointer; */
+            font-size: 1.5vw;
             color: var(--main);
             font-family: Arial;
             font-weight: regular;
             text-align: left;
+            line-height: 200%;
             margin-top: 1%;
             margin-left: 0%;
             margin-right: 0%;
         }
 
         .project-list {
-            font-size: 14px;
+            /* cursor: pointer; */
+            font-size: 1.2vw;
             color: var(--main);
             font-family: Arial;
             font-weight: regular;
             text-align: left;
+            line-height: 180%;
             margin-top: 1%;
-            margin-left: 0;
+            margin-left: 15%;
             margin-right: 0;
-            position: absolute;
-            top: 25%;
-            left: 25%;
+            position: relative; 
+            top: 0%;
+            left: 0%;
             display: none;
         }
 
 
         ul {
-            margin-top: 5%;
             list-style: none;
-            line-height: 200%;
         }
 
         @keyframes fadeInLeftToRight {
@@ -153,7 +167,7 @@
                 transform: translateX(100%);
             }
             100% {
-                opacity: 1;
+                opacity: 0.7;
                 transform: translateX(0);
             }
         }
@@ -169,6 +183,7 @@
     </style>
 </head>
 <body class="background-gradient">
+    <!-- HOME PAGE -->
     <section class="home-section">
         <h1>Kristoffer Afflerbaugh</h1>
     
@@ -181,7 +196,8 @@
         </h3>
         <img id="headshot" src="images/headshot-circular.png" alt="Headshot">
         <p>
-            <em>AWS Community Builder, holding Terraform and AWS certifications, with over 
+            <em>
+                AWS Community Builder, holding Terraform and AWS certifications, with over 
                 20 articles in the last year published by leading tech publications leveraging AWS, 
                 scripting, and Infrastructure as Code to manage architecture, pipelines, and 
                 automation. Employing a unique technical background in music, with a recent DevOps 
@@ -190,27 +206,58 @@
             </em>
         </p>
     </section>
-    <section id="projectsContent" class="hidden">
+
+    <!-- PROJECT MENU PAGE -->
+    <section id="project-container" class="hidden" onmouseleave="hideProjectList()">
         <!-- Project categories to show when "Projects" is clicked -->
         <ul>
-            <li class="project-category" onmouseover="showProjectList('aws')">AWS Projects</li>
-            <li class="project-category" onmouseover="showProjectList('iac')">Infrastructure as Code Projects</li>
-            <li>Configuration Management Projects</li>
+            <li class="project-category" onmouseover="showProjectList('aws')">AWS</li>
+            <li class="project-category" onmouseover="showProjectList('iac')">Infrastructure as Code</li>
+            <li class="project-category" onmouseover="showProjectList('cicd')">CI/CD</li>
+            <li class="project-category" onmouseover="showProjectList('containers')">Containerization</li>
         </ul>
-            <section id="awsProjects" class="project-list">
-                <ul>
-                    <li>Automating Static Website Deployment: A Guide to CI/CD with AWS and Terraform</li>
-                    <li>Chaining AWS Services with Automation: Incorporating Lambda into Event-Driven Architecture</li>
-                    <li>Using CloudFormation to deploy a 3-tier infrastructure</li>
-                </ul>
-            </section>
-            <section id="iacProjects" class="project-list">
-                <ul>
-                    <li>Unleashing the Power of Terraform Modules: Leveraging Terraform to build an EC2 Autoscaling Module</li>
-                    <li>Architecting a 2 Tier Infrastructure with Modular Efficiency: Leveraging Terraform modules alongside the CI capabilities of Terraform Cloud</li>
-                    <li>Leveraging Terraform for Consistent and Scalable Architecture: Launching a Jenkins Server with Terraform</li>
-                </ul>
-            </section>
+        <div id="awsProjects" class="project-list">
+            <ul>
+                <li>CI/CD Pipeline with AWS CodePipeline, CodeBuild, and Terraform</li>
+                <li>Custom Music Player with Django, Docker, Terraform and AWS</li>
+                <li>2-Tier Architecture with Terraform Modules and CI/CD</li>
+                <li>Autoscaling Group from Custom Terraform Module</li>
+                <li>Event-Driven Architecture with Lambda, API Gateway, SQS, SNS</li>
+                <li>DynamoDB Automation with Python</li>
+                <li>CloudFormation: 3-Tier Architecture</li>
+                <li>3-Tier Cloud Architecture</li>
+                <li>CloudFormation: EC2 Autoscaling Infrastructure</li>
+                <li>EC2 Auto Scaling Group</li>
+            </ul>
+        </div>
+        <section id="iacProjects" class="project-list">
+            <ul>
+                <li>CI/CD Pipeline with AWS CodePipeline, CodeBuild, and Terraform</li>
+                <li>Custom Music Player with Django, Docker, Terraform and AWS</li>
+                <li>Ansible: Fundamentals of Setup, Playbooks, and Ad Hoc Commands</li>
+                <li>2-Tier Architecture with Terraform Modules and CI/CD</li>
+                <li>Autoscaling Group from Custom Terraform Module</li>
+                <li>Jenkins with Terraform</li>
+                <li>CloudFormation: 3-Tier Architecture</li>
+                <li>CloudFormation: EC2 Autoscaling Infrastructure</li>
+            </ul>
+        </section>
+        <section id="cicdProjects" class="project-list">
+            <ul>
+                <li>CI/CD Pipeline with GitHub Actions</li>
+                <li>CI/CD Pipeline with AWS CodePipeline, CodeBuild, and Terraform</li>
+                <li>Jenkins with Terraform</li>
+                <li>Jenkins with Docker</li>
+            </ul>
+        </section>
+        <section id="containersProjects" class="project-list">
+            <ul>
+                <li>Custom Music Player with Django, Docker, Terraform and AWS</li>
+                <li>Docker Swarm Part I and II</li>
+                <li>Jenkins with Docker</li>
+                <li>Docker Basics</li>
+            </ul>
+        </section>
     </section>
 
     <script>
@@ -220,8 +267,7 @@
             document.querySelector('.home-section p').style.display = 'none';
 
             // Show projects content
-            document.getElementById('projectsContent').classList.remove('hidden');
-            document.getElementById('projectsContent').classList.add('project-category');
+            document.getElementById('project-container').classList.remove('hidden');
         }
 
         function showProjectList(category) {
@@ -236,14 +282,22 @@
             selectedList.style.display = 'block';
         }
 
+        function hideProjectList() {
+            // Hide all project lists
+            var projectLists = document.querySelectorAll('.project-list');
+            projectLists.forEach(function(list) {
+                list.style.display = 'none';
+            });
+        }
+
         function goHome() {
             // Show headshot and paragraph text
             document.getElementById('headshot').style.display = 'block';
             document.querySelector('.home-section p').style.display = 'block';
 
             // Hide projects content
-            document.getElementById('projectsContent').classList.add('hidden');
-            document.getElementById('projectsContent').classList.remove('project-category');
+            document.getElementById('project-container').classList.add('hidden');
+            document.getElementById('project-container').classList.remove('project-category');
 
             // Remove Animations from headshot and paragraph text
             document.getElementById('headshot').style.animation = 'none';
