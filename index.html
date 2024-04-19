@@ -336,7 +336,7 @@
             <li onclick="showProjectDescription('dockerSwarm1')">Docker Swarm Part I</li>
             <li onclick="showProjectDescription('dockerSwarm2')">Docker Swarm Part II</li>
             <li onclick="showProjectDescription('jenkDocker')">Jenkins with Docker</li>
-            <li>Docker Basics</li>
+            <li onclick="showProjectDescription('dockerBasics')">Docker Basics</li>
         </ul>
 
     <!-- Project descriptions to display when clicking on a project -->
@@ -520,6 +520,18 @@
                         Orchestrating a Swarm: Setting up and getting started with Docker Swarm: Part I
                     </a>
                 </h2>
+                <p>- Basic explanation of setting up a Docker Swarm on an EC2 fleet</p>
+                <p>- Explanation of SSH related actions:</p>
+                <ul>
+                    <li>Setting up a remote SSH host with VS Code</li>
+                    <li>Agent Forwarding</li>
+                </ul>
+                <p>- Discusses the initiation of a swarm manager and joining worker nodes</p>
+                <p>- Includes a boto3 script that:</p>
+                <ul>
+                    <li>Starts swarm nodes</li>
+                    <li>Returns public IP of the manager node</li>
+                    <li>Automates updating the ".ssh/config" file with the new IP address</li>
             </section>
             <section id="dockerSwarm2Description" class="project-description">
                 <h2>
@@ -527,6 +539,19 @@
                         Orchestrating a Swarm: Setting up and getting started with Docker Swarm: Part II
                     </a>
                 </h2>
+                <p>- Explanation of deploying services to Docker swarm</p>
+                <p>- Discusses the use of a compose file to deploy multi-container stacks</p>
+            </section>
+            <section id="dockerBasicsDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/techmanyu/travel-light-with-containers-how-to-use-a-docker-container-to-host-a-web-page-8d646f2ba688" target="_blank">
+                        Travel Light with Containers: How to use a Docker Container to Host a Web Server
+                    </a>
+                </h2>
+                <p>- Explanation of the basics of containerization, and Docker specifically</p>
+                <p>- Details setting up a Docker environment in VS Code and remote EC2 servers</p>
+                <p>- Employs a Docker container to host a web server</p>
+                <p>- Walks through the process of creating custom Docker images and pushing to Docker Hub</p>
             </section>
         </section>
     </section>
