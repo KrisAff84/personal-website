@@ -59,8 +59,8 @@
             color: var(--main);
             font-size: 1.75vw;
             margin-top: 1%;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: 1.8vi;
+            margin-right: 1.8vi;
         }
         
         /************** Summary *************/
@@ -82,11 +82,11 @@
             width: 15%;
             height: auto;
             margin: 2% auto;
-            align-self: center;
             animation: fadeInBottomToTop 2000ms;
             animation-delay: 200ms;
             animation-fill-mode: backwards;
         }
+
 
 /***************************** PROJECT MENU 'PAGE' ************************************/
         
@@ -119,7 +119,7 @@
 
         .project-list {
             width: 73%;
-            height: 34.3vh;
+            height: 18vi;
             font-size: 1.2vw;
             line-height: 150%;
             margin: 1%;
@@ -152,7 +152,7 @@
             padding-left: 1%;
             padding-right: 1%;
             font-size: 1.2vw;
-            text-align: left;
+            text-align: center;
             font-weight: normal;
         }
 
@@ -163,14 +163,16 @@
         .project-description p {
             white-space: nowrap;
             font-size: 1vw;
+            line-height: .7;
             text-align: left;
             font-weight: lighter;
             padding-right: 1%;
-            padding-left: 1%;
+            padding-left: 1.2%;
         }
 
         .project-description ul {
-            font-size: 0.8vw;
+            font-size: 1vw;
+            line-height: 1.5;
             font-weight: lighter;
             list-style: inside;
             padding-left: 6%;
@@ -178,6 +180,13 @@
 
         .project-description-animation {
             animation: fadeInScaleUp 400ms;
+        }
+
+        .project-image {
+            display: block;
+            width: 15%;
+            height: auto;
+            margin: 2% auto;
         }
 
 /***************************** ANIMATIONS ************************************/
@@ -261,6 +270,7 @@
     
         <h3>
             <a href="javascript:void(0)" onclick="goHome()" title="Go Home">Home</a>
+            <a href="javascript:void(0)" onclick="showAbout()" title="Bio">About</a>
             <a href="javascript:void(0)" onclick="showProjects()" title="Project links and descriptions">Projects</a>
             <a href="https://www.linkedin.com/in/kris-afflerbaugh/" target="_blank" title="LinkedIn Profile">LinkedIn</a>
             <a href="https://medium.com/@krisaff/" target="_blank" title="Medium Profile">Portfolio</a>
@@ -303,29 +313,30 @@
             <li onclick="showProjectDescription('cf3Tier')">CloudFormation: 3-Tier Architecture</li>
             <li onclick="showProjectDescription('3tier')">3-Tier Cloud Architecture</li>
             <li onclick="showProjectDescription('asgCf')">CloudFormation: EC2 Autoscaling Infrastructure</li>
-            <li>EC2 Auto Scaling Group</li>
+            <li onclick="showProjectDescription('ec2Auto')">EC2 Auto Scaling Group</li>
         </ul>
         <ul id="iacProjects" class="project-list">
             <li onclick="showProjectDescription('codePipe')">CI/CD Pipeline with AWS CodePipeline, CodeBuild, and Terraform</li>
             <li onclick="showProjectDescription('musicPlayer')">Custom Music Player with Django, Docker, Terraform and AWS</li>
-            <li>Ansible: Fundamentals of Setup, Playbooks, and Ad Hoc Commands</li>
+            <li onclick="showProjectDescription('ansible')">Ansible: Fundamentals of Setup, Playbooks, and Ad Hoc Commands</li>
             <li onclick="showProjectDescription('2tierTerraform')">2-Tier Architecture with Terraform Modules and CI/CD</li>
             <li onclick="showProjectDescription('asgTerraform')">Autoscaling Group from Custom Terraform Module</li>
-            <li>Jenkins with Terraform</li>
+            <li onclick="showProjectDescription('jenkTerraform')">Jenkins with Terraform</li>
             <li onclick="showProjectDescription('cf3Tier')">CloudFormation: 3-Tier Architecture</li>
             <li onclick="showProjectDescription('asgCf')">CloudFormation: EC2 Autoscaling Infrastructure</li>
         </ul>
         <ul id="cicdProjects" class="project-list">
-            <li>CI/CD Pipeline with GitHub Actions</li>
+            <li onclick="showProjectDescription('gitActions')">CI/CD Pipeline with GitHub Actions</li>
             <li onclick="showProjectDescription('codePipe')">CI/CD Pipeline with AWS CodePipeline, CodeBuild, and Terraform</li>
-            <li>Jenkins with Terraform</li>
-            <li>Jenkins with Docker</li>
+            <li onclick="showProjectDescription('jenkTerraform')">Jenkins with Terraform</li>
+            <li onclick="showProjectDescription('jenkDocker')">Jenkins with Docker</li>
         </ul>
         <ul id="containersProjects" class="project-list">
             <li onclick="showProjectDescription('musicPlayer')">Custom Music Player with Django, Docker, Terraform and AWS</li>
-            <li>Docker Swarm Part I and II</li>
-            <li>Jenkins with Docker</li>
-            <li>Docker Basics</li>
+            <li onclick="showProjectDescription('dockerSwarm1')">Docker Swarm Part I</li>
+            <li onclick="showProjectDescription('dockerSwarm2')">Docker Swarm Part II</li>
+            <li onclick="showProjectDescription('jenkDocker')">Jenkins with Docker</li>
+            <li onclick="showProjectDescription('dockerBasics')">Docker Basics</li>
         </ul>
 
     <!-- Project descriptions to display when clicking on a project -->
@@ -439,6 +450,109 @@
                 </h2>
                 <p>- Leveraged CloudFormation for the creation of an EC2 autoscaling group, involving the setup of essential AWS resources.</p>
             </section>
+            <section id="gitActionsDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/devops-dev/automate-your-workflow-a-guide-to-ci-cd-with-github-actions-3f395d60ba69" target="_blank">
+                        Automate Your Workflow: A Guide to CI/CD with GitHub Actions
+                    </a>
+                </h2>
+                <p>- Thorough documentation on successful setup of custom GitHub Actions workflows to streamline CI process.</p>
+                <p>- Includes unit testing, linting, building Docker images, and a variety of Python scripts to automate resource management in AWS.</p>
+            </section>
+            <section id="ec2AutoDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/towards-aws/scaling-your-aws-architecture-with-ec2-auto-scaling-groups-9ff6e7cb86f2" target="_blank">
+                        Scaling your AWS architecture with EC2 auto scaling groups
+                    </a>
+                </h2>
+                <p>- Provisioning of an EC2 autoscaling group with application load balancer</p>
+                <p>- Adds necessary security groups for HTTP and SSH access</p>
+                <p>- Creation of a launch template with user data that installs an Apache web server</p>
+                <p>- Inclusion of a dynamic scaling policy, tested with stress tests</p>
+            </section>
+            <section id="ansibleDescription" class="project-description">
+                <h2>
+                    <a href="https://blog.devops.dev/getting-started-with-ansible-creating-basic-ansible-playbooks-to-configure-web-applications-32e9dc0f5c9f" target="_blank">
+                        Getting Started with Ansible: Creating basic Ansible playbooks to configure web applications
+                    </a>
+                </h2>
+                <p>- Details necessary steps to get started with Ansible, including:</p>
+                <ul>
+                    <li>Installation</li>
+                    <li>Configuration with ansible.cfg and inventory files</li>
+                    <li>Ad hoc commands</li>
+                    <li>Creating and running playbooks</li>
+                    <li>Distinguishing managed nodes with groups</li>
+                    <li>Running playbooks from particular tasks</li>
+                </ul>
+                <p>- Installation and starting of services like Nginx, and copying files to managed nodes</p>
+            </section>
+            <section id="jenkTerraformDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/devops-dev/leveraging-terraform-for-consistent-and-scalable-architecture-launching-a-jenkins-server-with-63b7c40fcf7b" target="_blank">
+                        Leveraging Terraform for Consistent and Scalable Architecture: Launching a Jenkins Server with Terraform
+                    </a>
+                </h2>
+                <p>- Discussion of Terraform basics</p>
+                <p>- Details setting up AWS Cloud9 for development</p>
+                <p>- Resources created:</p>
+                <ul>
+                    <li>EC2 instance with Jenkins installed</li>
+                    <li>S3 bucket for Jenkins artifacts</li>
+                    <li>Instance profile for instance bucket access</li>
+                    <li>Unique key pair for SSH access to EC2 instance</li>
+                </ul>
+            </section>
+            <section id="jenkDockerDescription" class="project-description">
+                <h2>
+                    <a href="https://www.techmanyu.com/leveraging-the-power-of-jenkins-and-docker-using-volumes-for-persistent-jenkins-data-on-a-docker-2fdc04037f94" target="_blank">
+                        Leveraging the Power of Jenkins and Docker: Using volumes for persistent Jenkins data on a Docker host
+                    </a>
+                </h2>
+                <p>- Basic discussion of Jenkins as a CI tool</p>
+                <p>- Discusses the creation of a Jenkins container with Docker</p>
+                <p>- Utilizes a Docker volume for persistent data</p>
+                <p>- Makes use of Docker Compose and Dockerfiles</p>
+            </section>
+            <section id="dockerSwarm1Description" class="project-description">
+                <h2>
+                    <a href="https://medium.com/nerd-for-tech/orchestrating-a-swarm-setting-up-and-getting-started-with-docker-swarm-part-i-94fd3adf6583" target="_blank">
+                        Orchestrating a Swarm: Setting up and getting started with Docker Swarm: Part I
+                    </a>
+                </h2>
+                <p>- Basic explanation of setting up a Docker Swarm on an EC2 fleet</p>
+                <p>- Explanation of SSH related actions:</p>
+                <ul>
+                    <li>Setting up a remote SSH host with VS Code</li>
+                    <li>Agent Forwarding</li>
+                </ul>
+                <p>- Discusses the initiation of a swarm manager and joining worker nodes</p>
+                <p>- Includes a boto3 script that:</p>
+                <ul>
+                    <li>Starts swarm nodes</li>
+                    <li>Returns public IP of the manager node</li>
+                    <li>Automates updating the ".ssh/config" file with the new IP address</li>
+            </section>
+            <section id="dockerSwarm2Description" class="project-description">
+                <h2>
+                    <a href="https://medium.com/nerd-for-tech/orchestrating-a-swarm-setting-up-and-getting-started-with-docker-swarm-part-ii-8e0553f736b" target="_blank">
+                        Orchestrating a Swarm: Setting up and getting started with Docker Swarm: Part II
+                    </a>
+                </h2>
+                <p>- Explanation of deploying services to Docker swarm</p>
+                <p>- Discusses the use of a compose file to deploy multi-container stacks</p>
+            </section>
+            <section id="dockerBasicsDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/techmanyu/travel-light-with-containers-how-to-use-a-docker-container-to-host-a-web-page-8d646f2ba688" target="_blank">
+                        Travel Light with Containers: How to use a Docker Container to Host a Web Server
+                    </a>
+                </h2>
+                <p>- Explanation of the basics of containerization, and Docker specifically</p>
+                <p>- Details setting up a Docker environment in VS Code and remote EC2 servers</p>
+                <p>- Employs a Docker container to host a web server</p>
+                <p>- Walks through the process of creating custom Docker images and pushing to Docker Hub</p>
+            </section>
         </section>
     </section>
 
@@ -496,6 +610,18 @@
             // Show the selected project description
             var selectedDescription = document.getElementById(project + 'Description');
             selectedDescription.style.display = 'block';
+        }
+
+        function showAbout() {
+            // Hide headshot, paragraph text, and projects content
+            document.getElementById('headshot').style.display = 'none';
+            document.querySelector('.home-section p').style.display = 'none';
+            document.getElementById('project-container').classList.add('hidden');
+            document.getElementById('project-description-container').classList.add('hidden');
+
+            // Hide projects content
+            // document.getElementById('project-container').classList.add('hidden');
+            // document.getElementById('project-description-container').classList.add('hidden');
         }
 
         function goHome() {
