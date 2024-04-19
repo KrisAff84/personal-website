@@ -87,57 +87,65 @@
 /* Project Menu Page */
         
         #project-container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: left;
+            align-items: stretch;
+            width: 100%;
+
             cursor: pointer;
             color: var(--main);
             font-family: Arial;
             font-weight: normal;
             text-align: left;
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-            width: 100%;
         }
 
         .project-category {
+            width: 25%;
+            height: auto;
             font-size: 1.5vw;
             line-height: 200%;
-            margin-top: 1%;
-            margin-left: 0%;
-            margin-right: 0%;
+            margin: 1%;
+            padding: 1%;
+            list-style: none;
         }
 
         .project-list {
+            width: 50%;
+            height: 220;
             font-size: 1.2vw;
             line-height: 150%;
-            margin-top: 1%;
-            margin-left: 15%;
-            margin-right: 0;
+            padding: 1%;
+            margin: 1%;
             position: relative; 
             top: 0%;
             left: 0%;
             display: none;
+            list-style: inside;
         }
 
 /* Project Descriptions */
 
         #project-description-container {
-            border: 1px solid var(--highlight);
+            width: 80%;
+            border: 1px solid var(--main);
             color: var(--main);
             font-family: Arial;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin: auto;
-            width: 80%;
+            margin-top: 5%;
+            margin-left: 10%;
         }
 
-        .project-desctiption {
+        .project-description {
             display: flex;
+            width: fit-content;
             flex-direction: column;
         }
+
         .project-description h2 {
+            padding-left: 1%;
             font-size: 1vw;
-            text-align: center;
+            text-align: left;
             display: block;
             font-weight: normal;
         }
@@ -153,7 +161,6 @@
             display: block;
             margin-right: 1%;
             margin-left: 1%;
-            text-wrap: nowrap;
         }
 
         .project-description ul {
@@ -161,10 +168,22 @@
             font-weight: lighter;
             display: block;
             list-style: inside;
+            padding-left: 6%;
         }
 
-        ul {
-            list-style: none;
+        .project-description-animation {
+            animation: fadeInScaleUp 600ms;
+        }
+
+        @keyframes fadeInScaleUp {
+            0% {
+                opacity: 0;
+                transform: translateY(-175%) translateX(5%) scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) translateX(0) scale(1);
+            }
         }
 
         @keyframes fadeInLeftToRight {
@@ -296,118 +315,118 @@
             <li>Jenkins with Docker</li>
             <li>Docker Basics</li>
         </ul>
-    </section>
 
     <!-- Project descriptions to display when clicking on a project -->
-    <section id="project-description-container" class="hidden">
+        <section id="project-description-container" class="hidden">
 
-        <section id="codePipeDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/towards-aws/automating-static-website-deployment-a-guide-to-ci-cd-with-aws-and-terraform-bb6fcbae5667" target="_blank">
-                    Automating Static Website Deployment: A Guide to CI/CD with AWS and Terraform
-                </a>
-            </h2>
-            <p>- Comprehensive guidance on provisioning a CI/CD pipeline with CodePipeline and CodeBuild using Terraform.</p>
-            <p>- Utilized a bash script for unit testing and status check on pull requests.</p>
-            <p>- Deployment pipeline runs on merge, deploying to the dev environment.</p>
-            <p>- A manual approval stage is implemented for deployment to the prod environment.</p> 
-        </section>
+            <section id="codePipeDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/towards-aws/automating-static-website-deployment-a-guide-to-ci-cd-with-aws-and-terraform-bb6fcbae5667" target="_blank">
+                        Automating Static Website Deployment: A Guide to CI/CD with AWS and Terraform
+                    </a>
+                </h2>
+                <p>- Comprehensive guidance on provisioning a CI/CD pipeline with CodePipeline and CodeBuild using Terraform.</p>
+                <p>- Utilized a bash script for unit testing and status check on pull requests.</p>
+                <p>- Deployment pipeline runs on merge, deploying to the dev environment.</p>
+                <p>- A manual approval stage is implemented for deployment to the prod environment.</p> 
+            </section>
 
-        <section id="musicPlayerDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/towards-aws/a-convergence-of-devops-tools-leveraging-django-docker-terraform-and-aws-to-build-a-custom-902733aaed8f" target="_blank">
-                    A Convergence of DevOps Tools: Leveraging Django, Docker, Terraform, and AWS to build a custom music player — Part I
-                </a>
-            </h2>
-            <p>- Developed and maintained a custom music player using Django, Docker, Nginx, and Gunicorn.</p>
-            <p>- Utilized Python as well as JavaScript and HTML for the application.</p>
-            <p>- Orchestrated robust and scalable AWS infrastructure with Terraform.</p>
-            <p>- Implemented a blue/green deployment strategy via DNS routing for seamless updates.</p>
-            <p>- Integrated a CI pipeline using GitHub Actions for testing and building of containers and AMIs.</p>
-        </section>
-        <section id="2tierTerraformDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/aws-tip/architecting-a-2-tier-infrastructure-with-modular-efficiency-leveraging-terraform-modules-3855a7b97d6e" target="_blank">
-                    Architecting a 2 Tier Infrastructure with Modular Efficiency: Leveraging Terraform modules alongside the CI capabilities of Terraform Cloud
-                </a>
-            </h2>
-            <p>- Built modular 2-tier AWS architecture using reusable Terraform modules.</p>
-            <p>- Integration of Terraform Cloud with GitHub for continuous integration.</p>
-            <p>- Enhanced module reusability with specific functionalities.</p>
-        </section>
-        <section id="asgTerraformDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/towards-aws/unleashing-the-power-of-terraform-modules-leveraging-terraform-to-build-an-ec2-autoscaling-module-f49900648925" target="_blank">
-                    Unleashing the Power of Terraform Modules: Leveraging Terraform to build an EC2 Autoscaling Module
-                </a>
-            </h2>
-            <p>- Crafted a custom Terraform module for EC2 autoscaling.</p>
-            <p>- Provisioned various components, including: launch template, security groups, and application load balancer.</p>
-            <p>- Documented tests for functionality, including web server access, SSH connectivity, and autoscaling.</p>
-        </section>
-        <section id="eventDrivenDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/aws-tip/chaining-aws-services-with-automation-incorporating-lambda-into-event-driven-architecture-701af88dfd5a" target="_blank">
-                    Chaining AWS Services with Automation: Incorporating Lambda into Event-Driven Architecture
-                </a>
-            </h2>
-            <p>- Utilized Lambda with SQS, SNS, and API Gateway to implement an event driven architecture in AWS.</p>
-        </section>
-        <section id="dynamoPyDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/towards-aws/save-time-and-money-with-automation-leveraging-python-and-boto3-to-automate-dynamodb-actions-dbb4733ece3c" target="_blank">
-                    Save Time and Money with Automation: Leveraging Python and boto3 to automate DynamoDB actions
-                </a>
-            </h2>
-            <p>- Utilized a Python Boto3 script for time and cost-saving automation of DynamoDB operations.</p>
-            <p>- Demonstrates enhanced efficiency and reduced manual workload.</p>
-        </section>
-        <section id="cf3TierDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/aws-tip/using-cloudformation-to-deploy-a-3-tier-infrastructure-d04d66f641d3" target="_blank">
-                    Using CloudFormation to deploy a 3-tier infrastructure
-                </a>
-            </h2>
-            <p>- Constructed a 3-tier AWS architecture with CloudFormation.</p>
-            <p>- Provisioned resources such as:</p>
-            <ul>
-                <li>VPC</li>
-                <li>Subnets</li>
-                <li>Route Tables</li>
-                <li>Launch Templates</li>
-                <li>Autoscaling groups</li>
-                <li>ELBs</li>
-                <li>Security Groups</li>
-                <li>RDS</li>
-            </ul>
-        </section>
-        <section id="3tierDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/aws-tip/increase-security-and-efficiency-with-a-3-tier-cloud-architecture-bf5e835cd55a" target="_blank">
-                    Increase Security and Efficiency with a 3-Tier Cloud Architecture
-                </a>
-            </h2>
-            <p>- Implemented a secure 3-tier AWS cloud architecture, isolating presentation, application logic, and data tiers.</p>
-            <p>- Demonstrates deployment security, efficiency, scalability, and ease of management.</p>
-            <p>- Provisioned resources such as:</p>
-            <ul>
-                <li>VPC</li>
-                <li>Subnets</li>
-                <li>Route Tables</li>
-                <li>Launch Templates</li>
-                <li>Autoscaling groups</li>
-                <li>ELBs</li>
-                <li>Security Groups</li>
-                <li>RDS</li>
-            </ul>
-        </section>
-        <section id="asgCfDescription" class="project-description">
-            <h2>
-                <a href="https://medium.com/towards-aws/harnessing-the-power-of-cloudformation-using-cloudformation-to-create-an-ec2-auto-scaling-200a92af569d" target="_blank">
-                    Harnessing the power of CloudFormation: Using CloudFormation to create an EC2 auto scaling infrastructure
-                </a>
-            </h2>
-            <p>- Leveraged CloudFormation for the creation of an EC2 autoscaling group, involving the setup of essential AWS resources.</p>
+            <section id="musicPlayerDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/towards-aws/a-convergence-of-devops-tools-leveraging-django-docker-terraform-and-aws-to-build-a-custom-902733aaed8f" target="_blank">
+                        A Convergence of DevOps Tools: Leveraging Django, Docker, Terraform, and AWS to build a custom music player — Part I
+                    </a>
+                </h2>
+                <p>- Developed and maintained a custom music player using Django, Docker, Nginx, and Gunicorn.</p>
+                <p>- Utilized Python as well as JavaScript and HTML for the application.</p>
+                <p>- Orchestrated robust and scalable AWS infrastructure with Terraform.</p>
+                <p>- Implemented a blue/green deployment strategy via DNS routing for seamless updates.</p>
+                <p>- Integrated a CI pipeline using GitHub Actions for testing and building of containers and AMIs.</p>
+            </section>
+            <section id="2tierTerraformDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/aws-tip/architecting-a-2-tier-infrastructure-with-modular-efficiency-leveraging-terraform-modules-3855a7b97d6e" target="_blank">
+                        Architecting a 2 Tier Infrastructure with Modular Efficiency: Leveraging Terraform modules alongside the CI capabilities of Terraform Cloud
+                    </a>
+                </h2>
+                <p>- Built modular 2-tier AWS architecture using reusable Terraform modules.</p>
+                <p>- Integration of Terraform Cloud with GitHub for continuous integration.</p>
+                <p>- Enhanced module reusability with specific functionalities.</p>
+            </section>
+            <section id="asgTerraformDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/towards-aws/unleashing-the-power-of-terraform-modules-leveraging-terraform-to-build-an-ec2-autoscaling-module-f49900648925" target="_blank">
+                        Unleashing the Power of Terraform Modules: Leveraging Terraform to build an EC2 Autoscaling Module
+                    </a>
+                </h2>
+                <p>- Crafted a custom Terraform module for EC2 autoscaling.</p>
+                <p>- Provisioned various components, including: launch template, security groups, and application load balancer.</p>
+                <p>- Documented tests for functionality, including web server access, SSH connectivity, and autoscaling.</p>
+            </section>
+            <section id="eventDrivenDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/aws-tip/chaining-aws-services-with-automation-incorporating-lambda-into-event-driven-architecture-701af88dfd5a" target="_blank">
+                        Chaining AWS Services with Automation: Incorporating Lambda into Event-Driven Architecture
+                    </a>
+                </h2>
+                <p>- Utilized Lambda with SQS, SNS, and API Gateway to implement an event driven architecture in AWS.</p>
+            </section>
+            <section id="dynamoPyDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/towards-aws/save-time-and-money-with-automation-leveraging-python-and-boto3-to-automate-dynamodb-actions-dbb4733ece3c" target="_blank">
+                        Save Time and Money with Automation: Leveraging Python and boto3 to automate DynamoDB actions
+                    </a>
+                </h2>
+                <p>- Utilized a Python Boto3 script for time and cost-saving automation of DynamoDB operations.</p>
+                <p>- Demonstrates enhanced efficiency and reduced manual workload.</p>
+            </section>
+            <section id="cf3TierDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/aws-tip/using-cloudformation-to-deploy-a-3-tier-infrastructure-d04d66f641d3" target="_blank">
+                        Using CloudFormation to deploy a 3 tier infrastructure
+                    </a>
+                </h2>
+                <p>- Constructed a 3-tier AWS architecture with CloudFormation.</p>
+                <p>- Provisioned resources such as:</p>
+                <ul>
+                    <li>VPC</li>
+                    <li>Subnets</li>
+                    <li>Route Tables</li>
+                    <li>Launch Templates</li>
+                    <li>Autoscaling groups</li>
+                    <li>ELBs</li>
+                    <li>Security Groups</li>
+                    <li>RDS</li>
+                </ul>
+            </section>
+            <section id="3tierDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/aws-tip/increase-security-and-efficiency-with-a-3-tier-cloud-architecture-bf5e835cd55a" target="_blank">
+                        Increase Security and Efficiency with a 3-Tier Cloud Architecture
+                    </a>
+                </h2>
+                <p>- Implemented a secure 3-tier AWS cloud architecture, isolating presentation, application logic, and data tiers.</p>
+                <p>- Demonstrates deployment security, efficiency, scalability, and ease of management.</p>
+                <p>- Provisioned resources such as:</p>
+                <ul>
+                    <li>VPC</li>
+                    <li>Subnets</li>
+                    <li>Route Tables</li>
+                    <li>Launch Templates</li>
+                    <li>Autoscaling groups</li>
+                    <li>ELBs</li>
+                    <li>Security Groups</li>
+                    <li>RDS</li>
+                </ul>
+            </section>
+            <section id="asgCfDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/towards-aws/harnessing-the-power-of-cloudformation-using-cloudformation-to-create-an-ec2-auto-scaling-200a92af569d" target="_blank">
+                        Harnessing the power of CloudFormation: Using CloudFormation to create an EC2 auto scaling infrastructure
+                    </a>
+                </h2>
+                <p>- Leveraged CloudFormation for the creation of an EC2 autoscaling group, involving the setup of essential AWS resources.</p>
+            </section>
         </section>
     </section>
 
@@ -441,12 +460,20 @@
             });
 
             // Hide project descriptions container
-            // document.getElementById('project-description-container').classList.add('hidden');
+            document.getElementById('project-description-container').classList.add('hidden');
         }
 
         function showProjectDescription(project) {
+            var projectContainer = document.getElementById('project-description-container');
+    
             // Show project descriptions container
-            document.getElementById('project-description-container').classList.remove('hidden');
+            projectContainer.classList.remove('hidden');
+            projectContainer.classList.add('project-description-animation');
+            
+            // Delay adding 'hidden' class
+            setTimeout(function() {
+                projectContainer.classList.remove('project-description-animation');
+            }, 600);
             
             // Hide all project descriptions
             var projectDescriptions = document.querySelectorAll('.project-description');
