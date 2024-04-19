@@ -7,7 +7,11 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <title>Kristoffer Afflerbaugh</title>
     <style>
-/* Global */
+/******************************************************************************************************/
+/************************************ CSS STYLES ******************************************************/
+/******************************************************************************************************/
+
+/********************* GLOBAL *************************/
         :root {
             --background: #0A0A28;
             --highlight: #ffffff;
@@ -26,7 +30,7 @@
             display: none !important; 
         }
         
-/* Home Page */
+/************************ HOME PAGE ***************************/
 
         .home-section {
             color: var(--main);
@@ -44,7 +48,7 @@
             animation-fill-mode: backwards;
         }
         
-        /* Links */
+        /************* Links *************/
         .home-section h3 {
             animation: fadeInLeftToRight 2200ms; 
             animation-delay: 200ms;
@@ -59,7 +63,7 @@
             margin-right: 20px;
         }
         
-        /* Summary */
+        /************** Summary *************/
         .home-section p {
             font-weight: 1;
             opacity: 0.7;
@@ -84,14 +88,15 @@
             animation-fill-mode: backwards;
         }
 
-/* Project Menu Page */
+/***************************** PROJECT MENU 'PAGE' ************************************/
         
         #project-container {
+            height: 80vh;
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
-            justify-content: left;
-            align-items: stretch;
+            justify-content: space-between;
+            align-content: flex-start;
             width: 100%;
 
             cursor: pointer;
@@ -102,51 +107,52 @@
         }
 
         .project-category {
-            width: 25%;
-            height: auto;
+            width: 18%;
+            height: fit-content;
             font-size: 1.5vw;
             line-height: 200%;
             margin: 1%;
             padding: 1%;
             list-style: none;
+            border: 1px solid var(--main);
         }
 
         .project-list {
-            width: 50%;
-            height: 220;
+            width: 73%;
+            height: 34.3vh;
             font-size: 1.2vw;
             line-height: 150%;
-            padding: 1%;
             margin: 1%;
+            padding: 1%;
             position: relative; 
-            top: 0%;
-            left: 0%;
             display: none;
             list-style: inside;
+            border: 1px solid var(--main);
         }
 
-/* Project Descriptions */
+/*********************** PROJECT DESCRIPTIONS ****************************/
 
         #project-description-container {
-            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 23.8%;
             border: 1px solid var(--main);
-            color: var(--main);
-            font-family: Arial;
-            margin-top: 5%;
-            margin-left: 10%;
+            padding-right: 1%;
         }
 
         .project-description {
-            display: flex;
-            width: fit-content;
-            flex-direction: column;
+            color: var(--main);
+            font-family: Arial;
         }
 
         .project-description h2 {
+            white-space: nowrap;
             padding-left: 1%;
-            font-size: 1vw;
+            padding-right: 1%;
+            font-size: 1.2vw;
             text-align: left;
-            display: block;
             font-weight: normal;
         }
 
@@ -155,34 +161,35 @@
         }
 
         .project-description p {
-            font-size: 0.8vw;
+            white-space: nowrap;
+            font-size: 1vw;
             text-align: left;
             font-weight: lighter;
-            display: block;
-            margin-right: 1%;
-            margin-left: 1%;
+            padding-right: 1%;
+            padding-left: 1%;
         }
 
         .project-description ul {
             font-size: 0.8vw;
             font-weight: lighter;
-            display: block;
             list-style: inside;
             padding-left: 6%;
         }
 
         .project-description-animation {
-            animation: fadeInScaleUp 600ms;
+            animation: fadeInScaleUp 400ms;
         }
+
+/***************************** ANIMATIONS ************************************/
 
         @keyframes fadeInScaleUp {
             0% {
                 opacity: 0;
-                transform: translateY(-175%) translateX(5%) scale(0);
+                transform: translateY(-180%) scale(0);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) translateX(0) scale(1);
+                transform: translateY(0) scale(1);
             }
         }
 
@@ -242,6 +249,11 @@
         }
     </style>
 </head>
+
+<!---------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------- HTML BODY ------------------------------------------------------------>
+<!---------------------------------------------------------------------------------------------------------------------->
+
 <body class="background-gradient">
     <!-- HOME PAGE -->
     <section class="home-section">
@@ -267,7 +279,7 @@
         </p>
     </section>
 
-    <!-- PROJECT MENU PAGE -->
+    <!-- PROJECT MENU 'PAGE' -->
     <section id="project-container" class="hidden" onmouseleave="hideProjectList()">
 
         <!-- Project categories to show when "Projects" is clicked -->
@@ -334,7 +346,7 @@
             <section id="musicPlayerDescription" class="project-description">
                 <h2>
                     <a href="https://medium.com/towards-aws/a-convergence-of-devops-tools-leveraging-django-docker-terraform-and-aws-to-build-a-custom-902733aaed8f" target="_blank">
-                        A Convergence of DevOps Tools: Leveraging Django, Docker, Terraform, and AWS to build a custom music player — Part I
+                        A Convergence of DevOps Tools: Leveraging Django, Docker, Terraform, and AWS to build a custom music player
                     </a>
                 </h2>
                 <p>- Developed and maintained a custom music player using Django, Docker, Nginx, and Gunicorn.</p>
@@ -473,7 +485,7 @@
             // Delay adding 'hidden' class
             setTimeout(function() {
                 projectContainer.classList.remove('project-description-animation');
-            }, 600);
+            }, 400);
             
             // Hide all project descriptions
             var projectDescriptions = document.querySelectorAll('.project-description');
