@@ -59,8 +59,8 @@
             color: var(--main);
             font-size: 1.75vw;
             margin-top: 1%;
-            margin-left: 20px;
-            margin-right: 20px;
+            margin-left: 1.8vi;
+            margin-right: 1.8vi;
         }
         
         /************** Summary *************/
@@ -119,7 +119,7 @@
 
         .project-list {
             width: 73%;
-            height: 34.3vh;
+            height: 18vi;
             font-size: 1.2vw;
             line-height: 150%;
             margin: 1%;
@@ -261,6 +261,7 @@
     
         <h3>
             <a href="javascript:void(0)" onclick="goHome()" title="Go Home">Home</a>
+            <a href="javascript:void(0)" onclick="showAbout()" title="Bio">About</a>
             <a href="javascript:void(0)" onclick="showProjects()" title="Project links and descriptions">Projects</a>
             <a href="https://www.linkedin.com/in/kris-afflerbaugh/" target="_blank" title="LinkedIn Profile">LinkedIn</a>
             <a href="https://medium.com/@krisaff/" target="_blank" title="Medium Profile">Portfolio</a>
@@ -496,6 +497,18 @@
             // Show the selected project description
             var selectedDescription = document.getElementById(project + 'Description');
             selectedDescription.style.display = 'block';
+        }
+
+        function showAbout() {
+            // Hide headshot, paragraph text, and projects content
+            document.getElementById('headshot').style.display = 'none';
+            document.querySelector('.home-section p').style.display = 'none';
+            document.getElementById('project-container').classList.add('hidden');
+            document.getElementById('project-description-container').classList.add('hidden');
+
+            // Hide projects content
+            // document.getElementById('project-container').classList.add('hidden');
+            // document.getElementById('project-description-container').classList.add('hidden');
         }
 
         function goHome() {
