@@ -1,0 +1,372 @@
+/************ GLOBAL ****************/
+
+:root {
+    --background: #0A0A28;
+    --highlight: #ffffff;
+    --main: #9491af;
+
+    --darker: #A0A0A7;
+    --title: #7C7C90;
+    --transparent: rgba(233, 233, 233, 0);
+}
+
+.background-gradient {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 35%, rgba(53,51,205,1) 100%);
+}
+
+.hidden {
+    display: none !important; 
+}
+
+/************************ HOME PAGE ***************************/
+
+.home-section {
+    color: var(--main);
+    font-family: Arial;
+    text-align: center;
+    font-weight: normal;
+}
+
+.home-section h1 {
+    font-size: 5vw;
+    letter-spacing: 3px;
+    margin-top: 5%;
+    animation: fadeInTopToBottom 1800ms;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+}
+
+/************* Links *************/
+.home-section h3 {
+    animation: fadeInLeftToRight 2200ms; 
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+}
+
+.home-section a {
+    color: var(--main);
+    font-size: 1.75vw;
+    margin-top: 1%;
+    margin-left: 1.8vi;
+    margin-right: 1.8vi;
+    transition: transform 0.1 ease;
+}
+
+.home-section a:hover {
+    transform: scale(1.01);
+}
+
+/************** Summary *************/
+.home-section p {
+    font-weight: 1;
+    opacity: 0.7;
+    font-size: 1.4vw;
+    margin-top: 5%;
+    margin-left: 23%;
+    margin-right: 23%;
+    line-height: 115%;
+    animation: fadeInRightToLeft 2200ms;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+}
+
+#headshot {
+    display: block;
+    width: 15%;
+    height: auto;
+    margin: 2% auto;
+    animation: fadeInBottomToTop 2000ms;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+}
+
+
+/***************************** PROJECT MENU 'PAGE' ************************************/
+
+#project-container {
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100%;
+
+    cursor: pointer;
+    color: var(--main);
+    font-family: Arial;
+    font-weight: normal;
+    text-align: left;
+}
+
+.project-category {
+    width: 18%;
+    height: fit-content;
+    font-size: 1.5vw;
+    line-height: 200%;
+    margin: 1%;
+    padding: 1%;
+    list-style: none;
+    border: 1px solid var(--main);
+}
+
+.project-category li {
+    font-size: 1.5vw;
+    transition: transform 0.1 ease;
+}
+
+.project-category li:hover {
+    transform: scale(1.03);
+}
+
+.project-list {
+    width: 73%;
+    height: 18vi;
+    font-size: 1.2vw;
+    line-height: 150%;
+    margin: 1%;
+    padding: 1%;
+    position: relative; 
+    display: none;
+    list-style: inside;
+    border: 1px solid var(--main);
+}
+
+.project-list li {
+    transition: transform 0.1 ease;
+}
+
+.project-list li:hover {
+    transform: scale(1.01);
+}
+
+/*********************** PROJECT DESCRIPTIONS ****************************/
+
+#project-description-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 23.8%;
+    border: 1px solid var(--main);
+    padding-right: 1%;
+}
+
+.project-description {
+    color: var(--main);
+    font-family: Arial;
+}
+
+.project-description h2 {
+    white-space: nowrap;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-size: 1.2vw;
+    text-align: center;
+    font-weight: normal;
+}
+
+.project-description a {
+    color: var(--main);
+}
+
+.project-description p {
+    white-space: nowrap;
+    font-size: 1vw;
+    line-height: .7;
+    text-align: left;
+    font-weight: lighter;
+    padding-right: 1%;
+    padding-left: 1.2%;
+}
+
+.project-description ul {
+    font-size: 1vw;
+    line-height: 1.5;
+    font-weight: lighter;
+    list-style: inside;
+    padding-left: 6%;
+}
+
+.project-description-animation {
+    animation: fadeInScaleUp 400ms;
+}
+
+.project-image {
+    display: block;
+    width: 15%;
+    height: auto;
+    margin: 2% auto;
+}
+
+/***************************** ANIMATIONS ************************************/
+
+@keyframes fadeInScaleUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-180%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeInLeftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInTopToBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInBottomToTop {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRightToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 0.7;
+        transform: translateX(0);
+    }
+}
+
+@media (hover: hover) {
+    a:hover {
+        color: var(--highlight);
+    }
+    .project-category li:hover {
+        color: var(--highlight);
+    }
+    .project-list li:hover {
+        color: var(--highlight);
+    }
+}
+
+@media (hover: none) {
+    a:active {
+        color: var(--highlight);
+    }
+    .project-category li:active {
+        color: var(--highlight);
+    }
+    .project-list li:active {
+        color: var(--highlight);
+    }
+}
+
+.enlarge-on-hover {
+    transition: transform 0.1 ease;
+}
+
+.enlarge-on-hover:hover {
+    transform: scale(1.01);
+}
+
+
+/********************** MOBILE FORMATTING *************************/
+
+@media (max-width: 440px) {
+    .home-section h1 {
+        font-size: 28px;
+        letter-spacing: .5vw;
+    }
+    .home-section a {
+        font-size: 14px;
+        margin: .5vi;
+    }
+    .home-section p {
+        font-size: 14px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #headshot {
+        width: 35%;
+        margin: 10% auto;
+    }
+
+    #project-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .project-category {
+        border: none;
+        text-align: center;
+        height: fit-content;
+        width: 100%;
+        align-self: center;
+    }
+
+    .project-category li {
+        line-height: 150%;
+        font-size: 16px;
+    }
+
+    .project-category li:active {
+        transform: scale(1.05);
+    }
+
+    .project-list {
+        height: fit-content;
+        width: 100%;
+        font-size: 15px;
+        line-height: 200%;
+        align-self: center;
+    }
+
+    #project-description-container {
+        width: 101%;
+        align-self: center;
+        margin: 0;
+    }
+
+    .project-description h2 {
+        font-size: 14px;
+        white-space: wrap;
+        margin-bottom: 6%;
+        line-height: 150%;
+    }
+
+    .project-description p {
+        font-size: 12px;
+        white-space: wrap;
+        line-height: 115%;
+        margin-left: 2%;
+    }
+
+    .project-description p::first-letter {
+        margin-left: -2%;
+    }
+
+    .project-description ul {
+        font-size: 12px;
+        line-height: 150%;
+    }
+}
