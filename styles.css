@@ -1,13 +1,8 @@
 /************ GLOBAL ****************/
 
 :root {
-    --background: #0A0A28;
-    --highlight: #ffffff;
-    --main: #9491af;
-
-    --darker: #A0A0A7;
-    --title: #7C7C90;
-    --transparent: rgba(233, 233, 233, 0);
+    --highlight: #7d93ff;
+    --main: #dde1e6;
 }
 
 .background-gradient {
@@ -18,7 +13,7 @@
     display: none !important; 
 }
 
-/************************ HOME PAGE ***************************/
+/************** HOME PAGE ***************/
 
 .home-section {
     color: var(--main);
@@ -81,7 +76,7 @@
 }
 
 
-/***************************** PROJECT MENU 'PAGE' ************************************/
+/************* PROJECT MENU 'PAGE' ***************/
 
 #project-container {
     height: 80vh;
@@ -140,7 +135,7 @@
     transform: scale(1.01);
 }
 
-/*********************** PROJECT DESCRIPTIONS ****************************/
+/*********** PROJECT DESCRIPTIONS *************/
 
 #project-description-container {
     display: flex;
@@ -199,7 +194,7 @@
     margin: 2% auto;
 }
 
-/***************************** ANIMATIONS ************************************/
+/*************** ANIMATIONS *****************/
 
 @keyframes fadeInScaleUp {
     0% {
@@ -288,7 +283,7 @@
 }
 
 
-/********************** MOBILE FORMATTING *************************/
+/********** MOBILE FORMATTING ************/
 
 @media (max-width: 440px) {
     .home-section h1 {
@@ -339,6 +334,10 @@
         font-size: 15px;
         line-height: 200%;
         align-self: center;
+    }
+
+    .project-list li:hover {
+        transform: scale(1.02);
     }
 
     #project-description-container {
