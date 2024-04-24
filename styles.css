@@ -50,6 +50,21 @@
     animation-fill-mode: backwards;
 }
 
+#logo {
+    display: block;
+    opacity: 0.3;
+    width: 17%;
+    height: auto;
+    margin: 2% auto;
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    animation: logoAnimation 2200ms ease-out;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;
+}
+
 .home-section {
     color: var(--main);
     font-family: Arial, Helvetica, sans-serif;
@@ -327,6 +342,17 @@
     }
 }
 
+@keyframes logoAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-200%) rotateX(500deg);
+    }
+    100% {
+        opacity: 0.3;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
 /******* MOUSE BEHAVIOR ********/
 @media (hover: hover) {
     a:hover {
@@ -371,6 +397,15 @@
     .triangle2 {
         display: none;
     }
+
+    #logo {
+        width: 40%;
+        bottom: 0;
+        left: 13%;
+        right: 0;
+        top: 75%;
+    }
+
     .home-section h1 {
         font-size: 28px;
         letter-spacing: .5vw;
