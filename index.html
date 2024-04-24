@@ -10,14 +10,11 @@
     <script src="scripts.js"></script>
 </head>
 
-<!---------------------------------------------------------------------------------------------------------------------->
-<!----------------------------------------------- HTML BODY ------------------------------------------------------------>
-<!---------------------------------------------------------------------------------------------------------------------->
-
 <body class="background-gradient">
     <!-- HOME PAGE -->
     <section class="home-section">
         <h1>Kristoffer Afflerbaugh</h1>
+        <h2><em>Orchestrating efficiency in the cloud</em></h2>
     
         <h3>
             <a href="javascript:void(0)" onclick="goHome()" title="Go Home">Home</a>
@@ -30,12 +27,12 @@
         <img id="headshot" src="images/headshot-circular.png" alt="Headshot">
         <p>
             <em>
-                AWS Community Builder, holding Terraform and AWS certifications, with over 
-                20 articles in the last year published by leading tech publications leveraging AWS, 
-                scripting, and Infrastructure as Code to manage architecture, pipelines, and 
-                automation. Employing a unique technical background in music, with a recent DevOps 
-                specialization, demonstrating rapid skill acquisition and dedication, to bring a 
-                fresh perspective to cloud technology and automation.
+                AWS Community Builder, holding Terraform and AWS certifications, with over 20 articles in the 
+                last year published by leading tech publications leveraging AWS, scripting, and Infrastructure 
+                as Code to manage architecture, CI/CD pipelines, and automation. Currently transitioning from
+                a lifelong career in music to the world of Cloud DevOps, avid to bring a fresh perspective to 
+                cloud technology and automation having amassed a prolific body of work and knowledge in the 
+                last 14 months, demonstrating rapid skill acquisition and dedication to excellence.
             </em>
         </p>
     </section>
@@ -50,7 +47,7 @@
             <li onmouseover="showProjectList('iac')" onclick="showProjectList('iac')">Infrastructure as Code</li>
             <li onmouseover="showProjectList('cicd')" onclick="showProjectList('cicd')">CI/CD</li>
             <li onmouseover="showProjectList('containers')" onclick="showProjectList('containers')">Containerization</li>
-            <li onmouseover="showProjectList('sctripting')" onclick="showProjectList('scripting')">Scripting</li>
+            <li onmouseover="showProjectList('scripting')" onclick="showProjectList('scripting')">Scripting</li>
         </ul>
 
         <!-- Project lists to show when hovering over a category -->
@@ -90,6 +87,10 @@
             <li onclick="showProjectDescription('jenkDocker')">Jenkins with Docker</li>
             <li onclick="showProjectDescription('dockerBasics')">Docker Basics</li>
         </ul>
+        <ul id="scriptingProjects" class="project-list">
+            <li onclick="showProjectDescription('dynamoPy')">DynamoDB Automation with Python</li>
+            <li onclick="showProjectDescription('pyCat')">Using Python to Catalog Files and Directories</li>
+        </ul>
 
     <!-- Project descriptions to display when clicking on a project -->
         <section id="project-description-container" class="hidden">
@@ -100,10 +101,11 @@
                         Automating Static Website Deployment: A Guide to CI/CD with AWS and Terraform
                     </a>
                 </h2>
-                <p>- Comprehensive guidance on provisioning a CI/CD pipeline with CodePipeline and CodeBuild using Terraform.</p>
-                <p>- Utilized a bash script for unit testing and status check on pull requests.</p>
-                <p>- Deployment pipeline runs on merge, deploying to the dev environment.</p>
-                <p>- A manual approval stage is implemented for deployment to the prod environment.</p> 
+                <p>- Comprehensive guidance on provisioning a CI/CD pipeline with CodePipeline and CodeBuild using Terraform</p>
+                <p>- Utilized a bash script for unit testing and status check on pull requests</p>
+                <p>- Deployment pipeline runs on merge, deploying to the dev environment</p>
+                <p>- A manual approval stage is implemented for deployment to the prod environment</p>
+                <p>- Inludes unit testing to check for HTML elements</p>
             </section>
 
             <section id="musicPlayerDescription" class="project-description">
@@ -113,10 +115,27 @@
                     </a>
                 </h2>
                 <p>- Developed and maintained a custom music player using Django, Docker, Nginx, and Gunicorn.</p>
-                <p>- Utilized Python as well as JavaScript and HTML for the application.</p>
-                <p>- Orchestrated robust and scalable AWS infrastructure with Terraform.</p>
-                <p>- Implemented a blue/green deployment strategy via DNS routing for seamless updates.</p>
-                <p>- Integrated a CI pipeline using GitHub Actions for testing and building of containers and AMIs.</p>
+                <p>- Utilized Python, JavaScript, and HTML for the application</p>
+                <p>- Orchestrated robust and scalable AWS infrastructure with Terraform:</p>
+                <ul>
+                    <li>Custom VPC with public and private subnets</li>
+                    <li>S3 bucket for storage of audio and image files</li>
+                    <li>Autoscaling group in private subnets, and launch template with custom AMI</li>
+                    <li>ALB in public subnets</li>
+                    <li>CloudFront distribution for caching files from S3 bucket</li>
+                    <li>VPC endpoint for autoscaling group access to S3 bucket</li>
+                    <li>Optional bastion host</li>
+                    <li>SSL certificate and domain name with records in Route53</li>
+                </ul>
+                <p>- Implemented a blue/green deployment strategy via DNS routing for seamless updates</p>
+                <p>- Integrated a CI pipeline using GitHub Actions:</p>
+                <ul>
+                    <li>Starts staging EC2 instance</li>
+                    <li>Runs unit tests and linting</li>
+                    <li>Builds custom Docker image and pushes to Docker Hub</li>
+                    <li>Deploys necessary containers to staging server</li>
+                    <li>Creates custom AMI from staging server for use in production</li>
+                </ul>
             </section>
             <section id="2tierTerraformDescription" class="project-description">
                 <h2>
@@ -124,9 +143,27 @@
                         Architecting a 2 Tier Infrastructure with Modular Efficiency: Leveraging Terraform modules alongside the CI capabilities of Terraform Cloud
                     </a>
                 </h2>
-                <p>- Built modular 2-tier AWS architecture using reusable Terraform modules.</p>
-                <p>- Integration of Terraform Cloud with GitHub for continuous integration.</p>
-                <p>- Enhanced module reusability with specific functionalities.</p>
+                <p>- Built modular 2-tier AWS architecture using 3 reusable Terraform modules:
+                <ul>
+                    <li>Network</li>
+                    <li>Web servers</li>
+                    <li>Database</li>
+                </ul>
+                </p>
+                <p>- Integration of Terraform Cloud with GitHub for continuous integration</p>
+                <p>- Enhanced module reusability with specific functionalities</p>
+                <p>- Resources created:
+                <ul>
+                    <li>Custom VPC</li>
+                    <li>2 private subnets</li>
+                    <li>2 public subnets</li>
+                    <li>RDS database</li>
+                    <li>NAT gateway</li>
+                    <li>Internet gateway</li>
+                    <li>EC2 instances</li>
+                    <li>Application load balancer</li>
+                </ul>
+                </p>
             </section>
             <section id="asgTerraformDescription" class="project-description">
                 <h2>
@@ -134,9 +171,21 @@
                         Unleashing the Power of Terraform Modules: Leveraging Terraform to build an EC2 Autoscaling Module
                     </a>
                 </h2>
-                <p>- Crafted a custom Terraform module for EC2 autoscaling.</p>
-                <p>- Provisioned various components, including: launch template, security groups, and application load balancer.</p>
-                <p>- Documented tests for functionality, including web server access, SSH connectivity, and autoscaling.</p>
+                <p>- In depth discussion on the creation of Terraform modules</p>
+                <p>- Explanation of how and why to use S3 as a backend for Terraform state</p>
+                <p>- Resources created:</p>
+                <ul>
+                    <li>Launch template</li>
+                    <li>Autoscaling group</li>
+                    <li>Application load balancer</li>
+                    <li>Security groups</li>
+                </ul>
+                <p>- Documented tests for functionality and accessibility:</p>
+                <ul>
+                    <li>Web server acces from the internet</li>
+                    <li>SSH connectivity</li>
+                    <li>Appropriate autoscaling</li>
+                </ul>
             </section>
             <section id="eventDrivenDescription" class="project-description">
                 <h2>
@@ -144,7 +193,10 @@
                         Chaining AWS Services with Automation: Incorporating Lambda into Event-Driven Architecture
                     </a>
                 </h2>
-                <p>- Utilized Lambda with SQS, SNS, and API Gateway to implement an event driven architecture in AWS.</p>
+                <p>- Details the creation of an event-driven architecture in AWS, as well as the benefits of the design pattern</p>
+                <p>- Utilizes Lambda, API Gateway, SQS, and SNS</p>
+                <p>- Python with boto3 used for the Lambda functions</p>
+                <p>- Discussion of a potential roadblock when using boto3 to publish SNS messages</p>
             </section>
             <section id="dynamoPyDescription" class="project-description">
                 <h2>
@@ -152,8 +204,9 @@
                         Save Time and Money with Automation: Leveraging Python and boto3 to automate DynamoDB actions
                     </a>
                 </h2>
-                <p>- Utilized a Python Boto3 script for time and cost-saving automation of DynamoDB operations.</p>
-                <p>- Demonstrates enhanced efficiency and reduced manual workload.</p>
+                <p>- Utilized a Python Boto3 script for time and cost-saving automation of DynamoDB operations</p>
+                <p>- Demonstrates enhanced efficiency and reduced manual workload</p>
+                <p>- Automates parsing of text files and distribution of data to DynamoDB table</p>
             </section>
             <section id="cf3TierDescription" class="project-description">
                 <h2>
@@ -173,6 +226,8 @@
                     <li>Security Groups</li>
                     <li>RDS</li>
                 </ul>
+                <p>- Includes a discussion of cross-stack referencing for a more modular approach</p>
+                <p>- Load balancer troubleshooting</p>
             </section>
             <section id="3tierDescription" class="project-description">
                 <h2>
@@ -180,9 +235,9 @@
                         Increase Security and Efficiency with a 3-Tier Cloud Architecture
                     </a>
                 </h2>
-                <p>- Implemented a secure 3-tier AWS cloud architecture, isolating presentation, application logic, and data tiers.</p>
-                <p>- Demonstrates deployment security, efficiency, scalability, and ease of management.</p>
-                <p>- Provisioned resources such as:</p>
+                <p>- Implemented a secure 3-tier AWS cloud architecture, isolating presentation, application logic, and data tiers</p>
+                <p>- Demonstrates deployment security, efficiency, scalability, and ease of management</p>
+                <p>- Provisioned resources:</p>
                 <ul>
                     <li>VPC</li>
                     <li>Subnets</li>
@@ -192,7 +247,9 @@
                     <li>ELBs</li>
                     <li>Security Groups</li>
                     <li>RDS</li>
+                    <li>Bastion host</li>
                 </ul>
+                <p>- Explanation of how to test connectivity between tiers</p>
             </section>
             <section id="asgCfDescription" class="project-description">
                 <h2>
@@ -200,7 +257,18 @@
                         Harnessing the power of CloudFormation: Using CloudFormation to create an EC2 auto scaling infrastructure
                     </a>
                 </h2>
-                <p>- Leveraged CloudFormation for the creation of an EC2 autoscaling group, involving the setup of essential AWS resources.</p>
+                <p>- Leveraged CloudFormation for the creation of an EC2 autoscaling group, involving the setup of essential AWS resources</p>
+                <p>- Provisioned resources:</p>
+                <ul>
+                    <li>VPC</li>
+                    <li>Subnets</li>
+                    <li>Route Table</li>
+                    <li>Internet gateway</li>
+                    <li>Launch Template</li>
+                    <li>Autoscaling group</li>
+                    <li>Application Load Balancer</li>
+                    <li>Security Groups</li>
+                </ul>
             </section>
             <section id="gitActionsDescription" class="project-description">
                 <h2>
@@ -208,8 +276,25 @@
                         Automate Your Workflow: A Guide to CI/CD with GitHub Actions
                     </a>
                 </h2>
-                <p>- Thorough documentation on successful setup of custom GitHub Actions workflows to streamline CI process.</p>
-                <p>- Includes unit testing, linting, building Docker images, and a variety of Python scripts to automate resource management in AWS.</p>
+                <p>- Thorough documentation on successful setup of custom GitHub Actions workflows to streamline CI process</p>
+                <p>- Includes unit testing, linting, building Docker images, and a variety of Python scripts to automate resource management in AWS</p>
+                <p>- Stages of Pipeline:</p>
+                <ul>
+                    <li>On pull request:</li>
+                    <ul>
+                        <li>Starts staging server</li>
+                        <li>Runs unit tests and linting</li>
+                        <li>Builds Docker image and pushes to Docker Hub</li>
+                        <li>Deploys containers to staging server</li>
+                        <li>Staging server is stopped in the event of a pipeline failure</li>
+                    </ul>
+                    <li>On merge:</li>
+                    <ul>
+                        <li>Creates custom AMI from staging server</li>
+                        <li>Stops staging server</li>
+                        <li>Stops staging server without creating AMI in the event of a pull request being closed without merge</li>
+                    </ul>
+                </ul>
             </section>
             <section id="ec2AutoDescription" class="project-description">
                 <h2>
@@ -304,6 +389,15 @@
                 <p>- Details setting up a Docker environment in VS Code and remote EC2 servers</p>
                 <p>- Employs a Docker container to host a web server</p>
                 <p>- Walks through the process of creating custom Docker images and pushing to Docker Hub</p>
+            </section>
+            <section id="pyCatDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/techmanyu/get-organized-with-python-using-python-dictionaries-to-catalog-files-and-directories-dd03db22c939" target="_blank">
+                        Get organized with Python: Using Python dictionaries to catalog files and directories
+                    </a>
+                </h2>
+                <p>- Details the creation of a Python script for cataloging files and directories through the use of a Python dictionary</p>
+                <p>- Discusses the use of a recursive function to obtain directory sizes</p>
             </section>
         </section>
     </section>

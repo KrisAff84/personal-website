@@ -6,7 +6,7 @@
 }
 
 .background-gradient {
-    background: linear-gradient(90deg, rgba(0,0,0,1) 35%, rgba(53,51,205,1) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 15%, rgba(53,51,205,1) 100%);
 }
 
 .hidden {
@@ -17,7 +17,7 @@
 
 .home-section {
     color: var(--main);
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     font-weight: normal;
 }
@@ -25,10 +25,24 @@
 .home-section h1 {
     font-size: 5vw;
     letter-spacing: 3px;
-    margin-top: 5%;
-    animation: fadeInTopToBottom 1800ms;
+    margin-top: 4%;
+    margin-bottom: 0%;
+    animation: fadeInTopToBottom 2200ms;
     animation-delay: 200ms;
     animation-fill-mode: backwards;
+}
+
+/***** Tagline *****/
+.home-section h2 {
+    font-size: 1.2vw;
+    opacity: 0.6;
+    font-weight: 1;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    animation: fadeInRotate 600ms;
+    animation-delay: 1800ms;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in;
 }
 
 /************* Links *************/
@@ -44,11 +58,6 @@
     margin-top: 1%;
     margin-left: 1.8vi;
     margin-right: 1.8vi;
-    transition: transform 0.1 ease;
-}
-
-.home-section a:hover {
-    transform: scale(1.01);
 }
 
 /************** Summary *************/
@@ -89,7 +98,7 @@
 
     cursor: pointer;
     color: var(--main);
-    font-family: Arial;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     text-align: left;
 }
@@ -184,7 +193,7 @@
 }
 
 .project-description-animation {
-    animation: fadeInScaleUp 400ms;
+    animation: fadeInScaleUp 320ms;
 }
 
 .project-image {
@@ -199,7 +208,7 @@
 @keyframes fadeInScaleUp {
     0% {
         opacity: 0;
-        transform: translateY(-180%) scale(0);
+        transform: translateY(-75%) scale(0);
     }
     100% {
         opacity: 1;
@@ -250,6 +259,18 @@
     }
 }
 
+@keyframes fadeInRotate {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+    100% {
+        opacity: .6;
+        transform: rotateX(0deg);
+    }
+}
+
+/******* MOUSE BEHAVIOR ********/
 @media (hover: hover) {
     a:hover {
         color: var(--highlight);
@@ -290,6 +311,13 @@
         font-size: 28px;
         letter-spacing: .5vw;
     }
+
+    .home-section h2 {
+        font-size: 11px;
+        margin-top: 1%;
+        margin-bottom: 3%;
+    }
+
     .home-section a {
         font-size: 14px;
         margin: .5vi;
