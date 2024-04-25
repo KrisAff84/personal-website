@@ -13,7 +13,7 @@
 <body class="background-gradient">
     <div class="triangle1"></div>
     <div class="triangle2"></div>
-    <img id="logo" src="images/logo.png" alt="Logo">
+    <img class="logo" src="images/logo.png" alt="Logo">
     <!-- HOME PAGE -->
     <section class="home-section top">
         <h1>Kristoffer Afflerbaugh</h1>
@@ -46,11 +46,11 @@
         <!-- Project categories to show when "Projects" is clicked -->
 
         <ul class="project-category">
-            <li onmouseover="showProjectList('aws')" onclick="showProjectList('aws')">AWS</li>
-            <li onmouseover="showProjectList('iac')" onclick="showProjectList('iac')">Infrastructure as Code</li>
-            <li onmouseover="showProjectList('cicd')" onclick="showProjectList('cicd')">CI/CD</li>
-            <li onmouseover="showProjectList('containers')" onclick="showProjectList('containers')">Containerization</li>
-            <li onmouseover="showProjectList('scripting')" onclick="showProjectList('scripting')">Scripting</li>
+            <li onclick="showProjectList('aws')">AWS</li>
+            <li onclick="showProjectList('iac')">Infrastructure as Code</li>
+            <li onclick="showProjectList('cicd')">CI/CD</li>
+            <li onclick="showProjectList('containers')">Containerization</li>
+            <li onclick="showProjectList('scripting')">Scripting</li>
         </ul>
 
         <!-- Project lists to show when hovering over a category -->
