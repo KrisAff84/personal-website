@@ -162,6 +162,7 @@
     padding: 1%;
     list-style: none;
     border: 1px solid var(--main);
+    animation: fadeIn 1200ms ease; 
 }
 
 .project-category li {
@@ -184,6 +185,7 @@
     display: none;
     list-style: inside;
     border: 1px solid var(--main);
+    animation: fadeIn 700ms ease;
 }
 
 .project-list li {
@@ -253,7 +255,62 @@
     margin: 2% auto;
 }
 
+/**************** ABOUT MENU 'PAGE' ***************/
+
+#about-container {
+    margin: auto;
+    margin-top: 5%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    animation: fadeIn 1600ms ease;
+}
+
+.bio {
+    display: block;
+    width: 50%;
+    height: auto;
+    border: 1px solid var(--main);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.bio p {
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 2%;
+    font-weight: 1;
+    color: var(--main);
+}
+
+.skills {
+    display: block;
+    width: 30%;
+    height: auto;
+    border: 1px solid var(--main);
+}
+
+.skills h2 {
+    font-size: 1.6vw;
+    text-align: center;
+    font-weight: normal;
+    color: var(--main);
+}
+
+
+
 /*************** ANIMATIONS *****************/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes fadeInScaleUp {
     0% {
@@ -446,6 +503,19 @@
     #headshot {
         width: 35%;
         margin: 10% auto;
+    }
+
+    #about-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .bio {
+        width: 75%;
+    }
+
+    .skills {
+        width: 25%;
     }
 
     #project-container {
