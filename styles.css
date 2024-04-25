@@ -50,17 +50,17 @@
     animation-fill-mode: backwards;
 }
 
-#logo {
+.logo {
     display: block;
-    opacity: 0.3;
-    width: 17%;
+    opacity: 0.5;
+    width: 19%;
     height: auto;
     margin: 2% auto;
     z-index: 0;
     position: fixed;
     top: 0;
-    right: 0;
-    animation: logoAnimation 2200ms ease-out;
+    right: 3%;
+    animation: logoAnimation 2600ms ease-out;
     animation-delay: 200ms;
     animation-fill-mode: backwards;
 }
@@ -313,10 +313,13 @@
     0% {
         opacity: 0;
         transform: rotateX(90deg);
+        filter: blur(6px);
+        
     }
     100% {
         opacity: .6;
         transform: rotateX(0deg);
+        filter: blur(0px);
     }
 }
 
@@ -345,11 +348,11 @@
 @keyframes logoAnimation {
     0% {
         opacity: 0;
-        transform: translateY(-200%) rotateX(500deg);
+        transform: translateY(-150%) translateX(100%) rotateX(500deg) rotateY(80deg) scale(0);
     }
     100% {
-        opacity: 0.3;
-        transform: translateY(0) rotateX(0deg);
+        opacity: 0.5;
+        transform: translateY(0) translateX(0) rotateX(0deg) rotateY(0deg) scale(1);
     }
 }
 
@@ -398,12 +401,26 @@
         display: none;
     }
 
-    #logo {
-        width: 40%;
+    .logo {
+        width: 96%;
         bottom: 0;
-        left: 13%;
+        left: 7%;
         right: 0;
-        top: 75%;
+        top: -1%;
+        opacity: 0.3;
+        animation-delay: 0;
+        animation: logoAnimation 3600ms ease-out;
+    }
+
+    @keyframes logoAnimation {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(200%) rotateX(500deg) rotateY(80deg) scale(0);
+        }
+        100% {
+            opacity: 0.3;
+            -webkit-transform: translateY(0) rotateX(0deg) rotateY(0deg) scale(1);
+        }
     }
 
     .home-section h1 {
