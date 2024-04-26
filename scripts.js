@@ -70,6 +70,8 @@ function showAbout() {
     // document.getElementById('project-description-container').classList.add('hidden');
 }
 
+
+
 function goHome() {
     // Show headshot and paragraph text
     document.getElementById('headshot').style.display = 'block';
