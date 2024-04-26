@@ -3,6 +3,8 @@
 :root {
     --highlight: #7d93ff;
     --main: #dde1e6;
+    font-family: Arial, Helvetica, sans-serif;
+    --small-font: 1.2vw;
 }
 
 .background-gradient {
@@ -67,7 +69,6 @@
 
 .home-section {
     color: var(--main);
-    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     font-weight: normal
 }
@@ -84,7 +85,7 @@
 
 /***** Tagline *****/
 .home-section h2 {
-    font-size: 1.2vw;
+    font-size: var(--small-font);
     opacity: 0.6;
     font-weight: 1;
     margin-top: 1%;
@@ -162,6 +163,7 @@
     padding: 1%;
     list-style: none;
     border: 1px solid var(--main);
+    animation: fadeIn 1200ms ease; 
 }
 
 .project-category li {
@@ -184,6 +186,7 @@
     display: none;
     list-style: inside;
     border: 1px solid var(--main);
+    animation: fadeIn 700ms ease;
 }
 
 .project-list li {
@@ -253,7 +256,103 @@
     margin: 2% auto;
 }
 
+/**************** ABOUT MENU 'PAGE' ***************/
+
+#about-container {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    margin-top: 2%;
+    height: 55vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    animation: fadeIn 1600ms ease;
+}
+
+.bio {
+    display: block;
+    width: 75%;
+    height: auto;
+    border: 1px solid var(--main);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.bio p {
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 2%;
+    font-weight: 1;
+    color: var(--main);
+}
+
+.skills {
+    display: block;
+    width: 16%;
+    height: auto;
+    border: 1px solid var(--main);
+    color: var(--main);
+    overflow-y: hidden;
+    align-items: center;
+}
+
+.skills h2 {
+    border-bottom: 1px solid var(--main);
+    position: sticky;
+    top: 0;
+    text-align: center;
+    font-size: 1.4vw;
+    font-weight: 1;
+    margin: 0;
+    padding: 8%;
+    z-index: 2;
+}
+#outer-scroller {
+    display: flex;
+    mask: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+    height: 88%;
+    overflow-y: hidden;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#inner-scroller {
+    /* display: flex; */
+    list-style: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 0;
+    justify-content: flex-end;
+    height: fit-content;
+    position: relative;
+    animation: scroll 22s linear infinite;
+}
+
+.skills span {
+    background-color: rgb(84, 84, 84);
+    width: max-content;
+    padding: 3%;
+}
+.skills li {
+    text-align: center;
+    font-size: .9vw;
+    line-height: 4;
+    font-weight: lighter;
+}
+
+
+
 /*************** ANIMATIONS *****************/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 @keyframes fadeInScaleUp {
     0% {
@@ -356,6 +455,11 @@
     }
 }
 
+@keyframes scroll {
+    to {
+        transform: translateY(calc(50% - .10vh))
+    }
+}
 /******* MOUSE BEHAVIOR ********/
 @media (hover: hover) {
     a:hover {
@@ -446,6 +550,19 @@
     #headshot {
         width: 35%;
         margin: 10% auto;
+    }
+
+    #about-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .bio {
+        width: 75%;
+    }
+
+    .skills {
+        width: 25%;
     }
 
     #project-container {

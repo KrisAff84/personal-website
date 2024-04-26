@@ -2,6 +2,7 @@ function showProjects() {
     // Hide headshot and paragraph text
     document.getElementById('headshot').style.display = 'none';
     document.querySelector('.home-section p').style.display = 'none';
+    document.getElementById('about-container').classList.add('hidden');
 
     // Show projects content
     document.getElementById('project-container').classList.remove('hidden');
@@ -60,10 +61,16 @@ function showAbout() {
     document.getElementById('project-container').classList.add('hidden');
     document.getElementById('project-description-container').classList.add('hidden');
 
+    // Show about container
+    document.getElementById('about-container').classList.remove('hidden');
+
+
     // Hide projects content
     // document.getElementById('project-container').classList.add('hidden');
     // document.getElementById('project-description-container').classList.add('hidden');
 }
+
+
 
 function goHome() {
     // Show headshot and paragraph text
@@ -73,6 +80,7 @@ function goHome() {
     // Hide projects content
     document.getElementById('project-container').classList.add('hidden');
     document.getElementById('project-description-container').classList.add('hidden');
+    document.getElementById('about-container').classList.add('hidden');
 
     // Remove Animations from headshot and paragraph text
     document.getElementById('headshot').style.animation = 'none';
