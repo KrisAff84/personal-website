@@ -64,13 +64,26 @@ function showAbout() {
     // Show about container
     document.getElementById('about-container').classList.remove('hidden');
 
+    // Call the doubleSkills function
+    doubleSkills();
+
 
     // Hide projects content
     // document.getElementById('project-container').classList.add('hidden');
     // document.getElementById('project-description-container').classList.add('hidden');
 }
 
+function doubleSkills() {
+    //Appends the skill section with doubles to implement infinite scroll
+    const scrollerOuter = document.getElementById("outer-scroller");
+    const scrollerInner = document.getElementById("inner-scroller");
+    const scrollerContent = Array.from(scrollerInner.children);
 
+    scrollerContent.forEach(item => {
+        const duplicatedItem = item.cloneNode(true);
+        scrollerInner.appendChild(duplicatedItem);
+    });
+}
 
 function goHome() {
     // Show headshot and paragraph text
