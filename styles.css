@@ -1,8 +1,9 @@
 /************ GLOBAL ****************/
 
 :root {
-    --highlight: #7d93ff;
     --main: #dde1e6;
+    --highlight: #7d93ff;
+    --dark_blue: rgb(14, 14, 70);
     font-family: Arial, Helvetica, sans-serif;
     --small-font: 1.2vw;
 }
@@ -265,14 +266,14 @@
     height: 55vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 90%;
     animation: fadeIn 1600ms ease;
 }
 
 .bio {
     display: block;
-    width: 75%;
+    width: 80%;
     height: auto;
     border: 1px solid var(--main);
     overflow-y: scroll;
@@ -298,6 +299,7 @@
 }
 
 .skills h2 {
+    background-color: var(--dark_blue);
     border-bottom: 1px solid var(--main);
     position: sticky;
     top: 0;
@@ -310,7 +312,7 @@
 }
 #outer-scroller {
     display: flex;
-    mask: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+    mask: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
     height: 88%;
     overflow-y: hidden;
     flex-direction: column;
@@ -318,7 +320,6 @@
 }
 
 #inner-scroller {
-    /* display: flex; */
     list-style: none;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -326,13 +327,13 @@
     justify-content: flex-end;
     height: fit-content;
     position: relative;
-    animation: scroll 20s linear infinite;
+    animation: scroll 40s linear infinite;
 }
 
 .skills span {
-    background-color: rgb(84, 84, 84);
+    background-color: var(--dark_blue);
     width: max-content;
-    padding: 3%;
+    padding: 4%;
 }
 .skills li {
     text-align: center;
