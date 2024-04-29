@@ -4,8 +4,8 @@
     --main: #dde1e6;
     --highlight: #7d93ff;
     --dark_blue: rgb(14, 14, 70);
-    font-family: Arial, Helvetica, sans-serif;
     --small-font: 1.2vw;
+    --smallest_font: 1vw;
 }
 
 .background-gradient {
@@ -20,6 +20,27 @@
 .top {
     position: relative;
     z-index: 1;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--main);
+}
+
+h1 {
+    font-size: 5vw;
+    letter-spacing: 3px;
+}
+
+h2 {
+    font-size: 1.75vw;
+}
+
+a {
+    color: var(--main);
+    margin-top: 1%;
+    margin-left: 1.8vi;
+    margin-right: 1.8vi;
 }
 
 /************** HOME PAGE ***************/
@@ -69,14 +90,10 @@
 }
 
 .home-section {
-    color: var(--main);
     text-align: center;
-    font-weight: normal
 }
 
 .home-section h1 {
-    font-size: 5vw;
-    letter-spacing: 3px;
     margin-top: 4%;
     margin-bottom: 0%;
     animation: fadeInTopToBottom 2200ms;
@@ -85,7 +102,7 @@
 }
 
 /***** Tagline *****/
-.home-section h2 {
+.home-section h4 {
     font-size: var(--small-font);
     opacity: 0.6;
     font-weight: 1;
@@ -98,18 +115,10 @@
 }
 
 /************* Links *************/
-.home-section h3 {
+.home-section h2 {
     animation: fadeInLeftToRight 2200ms; 
     animation-delay: 200ms;
     animation-fill-mode: backwards;
-}
-
-.home-section a {
-    color: var(--main);
-    font-size: 1.75vw;
-    margin-top: 1%;
-    margin-left: 1.8vi;
-    margin-right: 1.8vi;
 }
 
 /************** Summary *************/
@@ -149,7 +158,6 @@
     width: 100%;
 
     cursor: pointer;
-    color: var(--main);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     text-align: left;
@@ -164,12 +172,7 @@
     padding: 1%;
     list-style: none;
     border: 1px solid var(--main);
-    animation: fadeIn 1200ms ease; 
-}
-
-.project-category li {
-    font-size: 1.5vw;
-    transition: transform 0.1 ease;
+    animation: fadeIn 1500ms ease; 
 }
 
 .project-category li:hover {
@@ -211,11 +214,10 @@
 }
 
 .project-description {
-    color: var(--main);
     font-family: Arial;
 }
 
-.project-description h2 {
+.project-description h4 {
     white-space: nowrap;
     padding-left: 1%;
     padding-right: 1%;
@@ -225,7 +227,7 @@
 }
 
 .project-description a {
-    color: var(--main);
+    font-size: var(--small-font)
 }
 
 .project-description p {
@@ -285,15 +287,14 @@
     line-height: 1.2;
     padding: 2%;
     font-weight: 1;
-    color: var(--main);
+    margin: 5px;
 }
 
 .skills {
     display: block;
-    width: 16%;
+    width: 210px;
     height: auto;
     border: 1px solid var(--main);
-    color: var(--main);
     overflow-y: hidden;
     align-items: center;
 }
@@ -312,20 +313,23 @@
 }
 #outer-scroller {
     display: flex;
-    mask: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    mask: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 100%);
     height: 88%;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* background-color: black; */
     overflow-y: hidden;
     flex-direction: column;
     justify-content: flex-end;
 }
 
 #inner-scroller {
+    height: fit-content;
     list-style: none;
     flex-wrap: nowrap;
     flex-direction: column;
     padding: 0;
     justify-content: flex-end;
-    height: fit-content;
     position: relative;
     animation: scroll 40s linear infinite;
 }
@@ -336,8 +340,10 @@
     padding: 4%;
 }
 .skills li {
+    white-space: nowrap;
+    letter-spacing: .04vw;
     text-align: center;
-    font-size: .9vw;
+    font-size: 12px;
     line-height: 4;
     font-weight: lighter;
 }
