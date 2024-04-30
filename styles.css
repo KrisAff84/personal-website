@@ -281,7 +281,7 @@ a {
     width: 75%;
     height: auto;
     border: 1px solid var(--main);
-    overflow-y: scroll;
+    overflow-y: auto;
     scroll-behavior: smooth;
 }
 
@@ -323,6 +323,7 @@ a {
 }
 
 #inner-scroller {
+    display: flex;
     list-style: none;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -556,18 +557,7 @@ a {
         margin: 10% auto;
     }
 
-    #about-container {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .bio {
-        width: 75%;
-    }
-
-    .skills {
-        width: 25%;
-    }
+    /********* PROJECTS *********/
 
     #project-container {
         flex-direction: column;
@@ -597,7 +587,7 @@ a {
         height: fit-content;
         width: 100%;
         font-size: 15px;
-        line-height: 200%;
+        line-height: 175%;
         align-self: center;
     }
 
@@ -606,7 +596,9 @@ a {
     }
 
     #project-description-container {
-        width: 101%;
+        /* flex-shrink: 1;
+        overflow-y: auto; */
+        width: 99%;
         align-self: center;
         margin: 0;
     }
@@ -632,5 +624,66 @@ a {
     .project-description ul {
         font-size: 12px;
         line-height: 150%;
+    }
+
+    /****** ABOUT *******/
+
+    #about-container {
+        flex-direction: column;
+        width: 100%;
+        height: 83vh;
+        justify-content: flex-start;
+    }
+    
+    .bio {
+        justify-content: flex-start;
+        width: 100%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin-bottom: 3%;
+    }
+
+    .skills span {
+        padding: 4% !important;
+    }
+
+    .skills {
+        padding-top: 1%;
+        width: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 25px;
+        margin-top: auto;
+    }
+
+    .skills h2 {
+        display: none;
+    }
+
+    #outer-scroller {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        overflow: hidden;
+    }
+    #inner-scroller {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        animation: scroll 46s linear infinite;
+        gap: 1rem;
+        flex-wrap: nowrap;
+    } 
+
+    .skills li {
+        white-space: nowrap;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    @keyframes scroll {
+        to {
+            transform: translateX(calc(50% - .5rem))
+        }
     }
 }
