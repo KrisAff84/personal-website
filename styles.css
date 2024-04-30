@@ -208,7 +208,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin-left: 21.8%;
     border: 1px solid var(--main);
     padding-left: 1%;
@@ -564,6 +564,7 @@ a {
         justify-content: flex-start;
         align-content: center;
         flex-wrap: nowrap;
+        height: 80vh;
     }
 
     .project-category {
@@ -591,13 +592,13 @@ a {
         align-self: center;
     }
 
-    .project-list li:hover {
+    .project-list li:active {
         transform: scale(1.02);
     }
 
     #project-description-container {
-        /* flex-shrink: 1;
-        overflow-y: auto; */
+        height: auto;
+        overflow-y: auto;
         width: 99%;
         align-self: center;
         margin: 0;
@@ -609,6 +610,7 @@ a {
         margin-bottom: 6%;
         line-height: 150%;
     }
+
 
     .project-description p {
         font-size: 12px;
