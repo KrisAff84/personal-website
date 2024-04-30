@@ -1,3 +1,4 @@
+
 function showProjects() {
     // Hide headshot and paragraph text
     document.getElementById('headshot').style.display = 'none';
@@ -74,8 +75,8 @@ function showAbout() {
 }
 
 function doubleSkills() {
+    removeDuplicateItems();
     //Appends the skill section with doubles to implement infinite scroll
-    const scrollerOuter = document.getElementById("outer-scroller");
     const scrollerInner = document.getElementById("inner-scroller");
     const scrollerContent = Array.from(scrollerInner.children);
 
@@ -98,4 +99,21 @@ function goHome() {
     // Remove Animations from headshot and paragraph text
     document.getElementById('headshot').style.animation = 'none';
     document.querySelector('.home-section p').style.animation = 'none';
+}
+
+function removeDuplicateItems() {
+    const list = document.getElementById('inner-scroller');
+    const items = Array.from(list.children);
+
+    const uniqueItemContents = new Set();
+
+    // Filter out duplicate items
+    items.forEach(item => {
+        const itemContent = item.innerHTML;
+        if (!uniqueItemContents.has(itemContent)) {
+            uniqueItemContents.add(itemContent);
+        } else {
+            list.removeChild(item); // Remove the duplicate item from the DOM
+        }
+    });
 }
