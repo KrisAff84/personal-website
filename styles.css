@@ -4,7 +4,6 @@
     --main: #dde1e6;
     --highlight: #7d93ff;
     --dark_blue: rgb(14, 14, 70);
-    font-family: Arial, Helvetica, sans-serif;
     --small-font: 1.2vw;
 }
 
@@ -20,6 +19,15 @@
 .top {
     position: relative;
     z-index: 1;
+}
+
+body { 
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--main);
+}
+
+a { 
+    color: var(--main);
 }
 
 /************** HOME PAGE ***************/
@@ -69,7 +77,6 @@
 }
 
 .home-section {
-    color: var(--main);
     text-align: center;
     font-weight: normal
 }
@@ -105,7 +112,6 @@
 }
 
 .home-section a {
-    color: var(--main);
     font-size: 1.75vw;
     margin-top: 1%;
     margin-left: 1.8vi;
@@ -149,14 +155,13 @@
     width: 100%;
 
     cursor: pointer;
-    color: var(--main);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     text-align: left;
 }
 
 .project-category {
-    width: 18%;
+    width: 16%;
     height: fit-content;
     font-size: 1.5vw;
     line-height: 200%;
@@ -177,7 +182,7 @@
 }
 
 .project-list {
-    width: 73%;
+    width: 75%;
     height: 18vi;
     font-size: 1.2vw;
     line-height: 150%;
@@ -205,27 +210,28 @@
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    margin-left: 23.8%;
+    margin-left: 21.8%;
     border: 1px solid var(--main);
-    padding-right: 1%;
+    padding-left: 1%;
+    padding-right: 2%;
 }
 
 .project-description {
-    color: var(--main);
     font-family: Arial;
 }
 
 .project-description h2 {
     white-space: nowrap;
     padding-left: 1%;
-    padding-right: 1%;
+    padding-right: 1%; 
     font-size: 1.2vw;
     text-align: center;
     font-weight: normal;
 }
 
 .project-description a {
-    color: var(--main);
+    text-align: center;
+    font-weight: normal;
 }
 
 .project-description p {
@@ -285,7 +291,6 @@
     line-height: 1.2;
     padding: 2%;
     font-weight: 1;
-    color: var(--main);
 }
 
 .skills {
@@ -293,7 +298,6 @@
     width: 16%;
     height: auto;
     border: 1px solid var(--main);
-    color: var(--main);
     overflow-y: hidden;
     align-items: center;
 }
