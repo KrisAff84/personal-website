@@ -692,7 +692,7 @@ a {
         flex-direction: row;
         justify-content: flex-end;
         align-items: center;
-        animation: scroll 46s linear infinite;
+        animation: scroll 45s linear infinite;
         flex-wrap: nowrap;
     } 
 
@@ -706,7 +706,7 @@ a {
 
     @keyframes scroll {
         to {
-            transform: translateX(calc(50% - .5rem))
+            transform: translateX(50%)
         }
     }
 }
