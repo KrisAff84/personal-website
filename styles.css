@@ -162,13 +162,15 @@ a {
 .project-category {
     width: 16%;
     height: fit-content;
-    font-size: 1.5vw;
-    line-height: 200%;
+    line-height: 3.6vi;
     margin: 1%;
     padding: 1%;
     list-style: none;
     border: 1px solid var(--main);
     animation: fadeIn 1200ms ease; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-category li {
@@ -191,11 +193,11 @@ a {
     display: none;
     list-style: inside;
     border: 1px solid var(--main);
-    animation: fadeIn 700ms ease;
 }
 
 .project-list li {
     transition: transform 0.1 ease;
+    animation: fadeIn 700ms ease;
 }
 
 .project-list li:hover {
@@ -543,10 +545,15 @@ a {
         margin-bottom: 3%;
     }
 
+    .home-section h3 {
+        margin-bottom: 0;
+    }
+
     .home-section a {
         font-size: 14px;
         margin: .5vi;
     }
+
     .home-section p {
         font-size: 14px;
         margin-left: 5%;
@@ -568,11 +575,12 @@ a {
     }
 
     .project-category {
+        margin-top: 3%;
+        margin-bottom: 3%; 
         border: none;
         text-align: center;
         height: fit-content;
         width: 100%;
-        align-self: center;
     }
 
     .project-category li {
@@ -590,6 +598,7 @@ a {
         font-size: 15px;
         line-height: 175%;
         align-self: center;
+        animation: fadeIn 700ms ease;
     }
 
     .project-list li:hover {
@@ -645,8 +654,17 @@ a {
         margin-bottom: 3%;
     }
 
+    .bio p {
+        font-size: 14px;
+        line-height: 1.2;
+        padding: 2%;
+    }
+
     .skills span {
-        padding: 4% !important;
+        background-color: rgb(30, 30, 30);
+        display: inline-block;
+        padding: 0.5rem;
+        margin: 0.5rem;
     }
 
     .skills {
@@ -670,17 +688,18 @@ a {
     }
     #inner-scroller {
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: flex-end;
         align-items: center;
         animation: scroll 46s linear infinite;
-        gap: 1rem;
         flex-wrap: nowrap;
     } 
 
     .skills li {
+        letter-spacing: .8px;
         white-space: nowrap;
         text-align: center;
         font-size: 14px;
+        padding: 0;
     }
 
     @keyframes scroll {
