@@ -1,10 +1,9 @@
 /************ GLOBAL ****************/
 
 :root {
-    --main: #dde1e6;
     --highlight: #7d93ff;
     --dark_blue: rgb(14, 14, 70);
-    --small-font: 1.2vw;
+    --main: #dde1e6;
 }
 
 .background-gradient {
@@ -93,7 +92,7 @@ a {
 
 /***** Tagline *****/
 .home-section h2 {
-    font-size: var(--small-font);
+    font-size: 1.2vw;
     opacity: 0.6;
     font-weight: 1;
     margin-top: 1%;
@@ -163,13 +162,15 @@ a {
 .project-category {
     width: 16%;
     height: fit-content;
-    font-size: 1.5vw;
-    line-height: 200%;
+    line-height: 3.6vi;
     margin: 1%;
     padding: 1%;
     list-style: none;
     border: 1px solid var(--main);
     animation: fadeIn 1200ms ease; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-category li {
@@ -192,11 +193,11 @@ a {
     display: none;
     list-style: inside;
     border: 1px solid var(--main);
-    animation: fadeIn 700ms ease;
 }
 
 .project-list li {
     transition: transform 0.1 ease;
+    animation: fadeIn 700ms ease;
 }
 
 .project-list li:hover {
@@ -209,7 +210,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     margin-left: 21.8%;
     border: 1px solid var(--main);
     padding-left: 1%;
@@ -272,17 +273,17 @@ a {
     height: 55vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 90%;
     animation: fadeIn 1600ms ease;
 }
 
 .bio {
     display: block;
-    width: 80%;
+    width: 75%;
     height: auto;
     border: 1px solid var(--main);
-    overflow-y: scroll;
+    overflow-y: auto;
     scroll-behavior: smooth;
 }
 
@@ -316,7 +317,7 @@ a {
 }
 #outer-scroller {
     display: flex;
-    mask: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    mask: linear-gradient(rgba(0,0,0,0) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
     height: 88%;
     overflow-y: hidden;
     flex-direction: column;
@@ -324,6 +325,7 @@ a {
 }
 
 #inner-scroller {
+    display: flex;
     list-style: none;
     flex-wrap: nowrap;
     flex-direction: column;
@@ -331,7 +333,7 @@ a {
     justify-content: flex-end;
     height: fit-content;
     position: relative;
-    animation: scroll 40s linear infinite;
+    animation: scroll 34s linear infinite;
 }
 
 .skills span {
@@ -543,10 +545,15 @@ a {
         margin-bottom: 3%;
     }
 
+    .home-section h3 {
+        margin-bottom: 0;
+    }
+
     .home-section a {
         font-size: 14px;
         margin: .5vi;
     }
+
     .home-section p {
         font-size: 14px;
         margin-left: 5%;
@@ -557,32 +564,23 @@ a {
         margin: 10% auto;
     }
 
-    #about-container {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .bio {
-        width: 75%;
-    }
-
-    .skills {
-        width: 25%;
-    }
+    /********* PROJECTS *********/
 
     #project-container {
         flex-direction: column;
         justify-content: flex-start;
         align-content: center;
         flex-wrap: nowrap;
+        height: 80vh;
     }
 
     .project-category {
+        margin-top: 3%;
+        margin-bottom: 3%; 
         border: none;
         text-align: center;
         height: fit-content;
         width: 100%;
-        align-self: center;
     }
 
     .project-category li {
@@ -590,7 +588,7 @@ a {
         font-size: 16px;
     }
 
-    .project-category li:active {
+    .project-category li:hover {
         transform: scale(1.05);
     }
 
@@ -598,8 +596,9 @@ a {
         height: fit-content;
         width: 100%;
         font-size: 15px;
-        line-height: 200%;
+        line-height: 175%;
         align-self: center;
+        animation: fadeIn 700ms ease;
     }
 
     .project-list li:hover {
@@ -607,7 +606,9 @@ a {
     }
 
     #project-description-container {
-        width: 101%;
+        height: auto;
+        overflow-y: auto;
+        width: 99%;
         align-self: center;
         margin: 0;
     }
@@ -618,6 +619,7 @@ a {
         margin-bottom: 6%;
         line-height: 150%;
     }
+
 
     .project-description p {
         font-size: 12px;
@@ -633,5 +635,90 @@ a {
     .project-description ul {
         font-size: 12px;
         line-height: 150%;
+    }
+
+    /****** ABOUT *******/
+
+    #about-container {
+        flex-direction: column;
+        width: 100%;
+        height: 84vh;
+        justify-content: flex-start;
+    }
+    
+    .bio {
+        justify-content: flex-start;
+        width: 100%;
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin-bottom: 3%;
+    }
+
+    .bio p {
+        font-size: 14px;
+        line-height: 1.2;
+        padding: 2%;
+    }
+
+    .skills span {
+        background-color: rgb(30, 30, 30);
+        display: inline-block;
+        padding: 0.5rem;
+        margin: 0.5rem;
+    }
+
+    .skills {
+        padding-top: 1%;
+        width: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 25px;
+        margin-top: auto;
+    }
+
+    .skills h2 {
+        display: none;
+    }
+
+    #outer-scroller {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        overflow: hidden;
+    }
+    #inner-scroller {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        animation: scroll 46s linear infinite;
+        flex-wrap: nowrap;
+    } 
+
+    .skills li {
+        letter-spacing: .8px;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 14px;
+        padding: 0;
+    }
+
+    @keyframes scroll {
+        to {
+            transform: translateX(calc(50% - .5rem))
+        }
+    }
+}
+
+@media (max-height: 700px) {
+
+    .project-category li {
+        font-size: 15px;
+        line-height: 140%;
+    }
+
+    .project-list {
+        font-size: 13px;
+        max-height: 20vh;
+        overflow-y: auto;
     }
 }
