@@ -519,7 +519,7 @@ a {
         right: 0;
         top: -1%;
         opacity: 0.3;
-        animation: none;
+        animation: fadeIn 2500ms ease;
     }
 
     /* @keyframes logoAnimation {
