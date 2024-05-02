@@ -1,9 +1,9 @@
 /************ GLOBAL ****************/
 
 :root {
+    --main: #dde1e6;
     --highlight: #7d93ff;
     --dark_blue: rgb(14, 14, 70);
-    --main: #dde1e6;
 }
 
 .background-gradient {
@@ -178,8 +178,13 @@ a {
     transition: transform 0.1 ease;
 }
 
-.project-category li:hover {
+/* .project-category li:hover {
     transform: scale(1.03);
+} */
+
+.category-active {
+    transform: scale(1.03);
+    color: var(--highlight);
 }
 
 .project-list {
@@ -200,8 +205,13 @@ a {
     animation: fadeIn 700ms ease;
 }
 
-.project-list li:hover {
+/* .project-list li:hover {
     transform: scale(1.01);
+} */
+
+.list-active { 
+    transform: scale(1.01);
+    color: var(--highlight);
 }
 
 /*********** PROJECT DESCRIPTIONS *************/
@@ -348,8 +358,6 @@ a {
     font-weight: lighter;
 }
 
-
-
 /*************** ANIMATIONS *****************/
 
 @keyframes fadeIn {
@@ -474,9 +482,11 @@ a {
     }
     .project-category li:hover {
         color: var(--highlight);
+        transform: scale(1.03);
     }
     .project-list li:hover {
         color: var(--highlight);
+        transform: scale(1.01);
     }
 }
 
@@ -484,20 +494,6 @@ a {
     a:active {
         color: var(--highlight);
     }
-    .project-category li:active {
-        color: var(--highlight);
-    }
-    .project-list li:active {
-        color: var(--highlight);
-    }
-}
-
-.enlarge-on-hover {
-    transition: transform 0.1 ease;
-}
-
-.enlarge-on-hover:hover {
-    transform: scale(1.01);
 }
 
 
@@ -587,11 +583,6 @@ a {
         font-size: 16px;
     }
 
-    .project-category li:hover {
-        transform: scale(1.05);
-        color: var(--highlight);
-    }
-
     .project-list {
         height: fit-content;
         width: 100%;
@@ -599,10 +590,6 @@ a {
         line-height: 175%;
         align-self: center;
         animation: fadeIn 700ms ease;
-    }
-
-    .project-list li:hover {
-        transform: scale(1.02);
     }
 
     #project-description-container {

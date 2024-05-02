@@ -10,6 +10,25 @@ function showProjects() {
 }
 
 function showProjectList(category) {
+    // Remove 'category-active' class from all list items
+    var categorylistItems = document.querySelectorAll('.project-category li');
+    categorylistItems.forEach(function(item) {
+        item.classList.remove('category-active');
+    });
+
+    // Remove 'list-active' class from all list items
+    var listItems = document.querySelectorAll('.project-list li');
+    listItems.forEach(function(item) {
+        item.classList.remove('list-active');
+    });
+
+    // Add 'active' class to the clicked list item
+    var list = document.querySelector('.project-category');
+    list.addEventListener('click', (event) => {
+        var lastClickedItem = event.target;
+        lastClickedItem.classList.add('category-active');
+    })
+
     // Hide all project lists
     var projectLists = document.querySelectorAll('.project-list');
     projectLists.forEach(function(list) {
@@ -28,11 +47,28 @@ function hideProjectList() {
         list.style.display = 'none';
     });
 
+    // Remove 'active' class from all category list items
+    var listItems = document.querySelectorAll('.project-category li');
+    listItems.forEach(function(item) {
+        item.classList.remove('category-active');
+    });
+
     // Hide project descriptions container
     document.getElementById('project-description-container').classList.add('hidden');
 }
 
 function showProjectDescription(project) {
+    // Remove 'list-active' class from all list items
+    var listItems = document.querySelectorAll('.project-list li');
+    listItems.forEach(function(item) {
+        item.classList.remove('list-active');
+    });
+
+    // Add 'active' class to the clicked list item
+    var lastClickedItem = event.target;
+    lastClickedItem.classList.add('list-active');
+    // })
+
     var projectContainer = document.getElementById('project-description-container');
 
     // Show project descriptions container
@@ -67,11 +103,6 @@ function showAbout() {
 
     // Call the doubleSkills function
     doubleSkills();
-
-
-    // Hide projects content
-    // document.getElementById('project-container').classList.add('hidden');
-    // document.getElementById('project-description-container').classList.add('hidden');
 }
 
 function doubleSkills() {
