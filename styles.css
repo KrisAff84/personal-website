@@ -141,6 +141,24 @@ a {
     animation-fill-mode: backwards;
 }
 
+#badge-container {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+    gap: 2vw;
+    animation: fadeInLeftToRight 2000ms ease;
+    animation-delay: 200ms;
+    animation-fill-mode: backwards;;
+}
+
+.badge {
+    display: block;
+    height: auto;
+    width: 6vw;
+}
 
 /************* PROJECT MENU 'PAGE' ***************/
 
@@ -178,10 +196,6 @@ a {
     transition: transform 0.1 ease;
 }
 
-/* .project-category li:hover {
-    transform: scale(1.03);
-} */
-
 .category-active {
     transform: scale(1.03);
     color: var(--highlight);
@@ -204,10 +218,6 @@ a {
     transition: transform 0.1 ease;
     animation: fadeIn 700ms ease;
 }
-
-/* .project-list li:hover {
-    transform: scale(1.01);
-} */
 
 .list-active { 
     transform: scale(1.01);
@@ -559,6 +569,19 @@ a {
         margin: 10% auto;
     }
 
+    #badge-container {
+        width: 95dvw;
+        justify-content: space-around;
+        height: auto;
+        position: absolute;
+        margin-top: 30dvh;
+    }
+
+    .badge {
+        /* display: none; */
+        width: 14dvw;
+    }
+
     /********* PROJECTS *********/
 
     #project-container {
@@ -709,5 +732,44 @@ a {
         font-size: 13px;
         max-height: 20vh;
         overflow-y: auto;
+    }
+}
+
+@media (max-width: 440px) and (max-height: 800px) {
+    #badge-container {
+        margin-top: 12dvh;
+    }
+}
+
+@media (min-width: 1300px) {
+
+    .home-section h1 {
+        margin-top: 2%;
+        font-size: 4vw;
+    }
+    
+    .home-section h2 {
+        margin-bottom: 2%;
+        font-size: 1.1vw;
+    }
+
+    .home-section a {
+        font-size: 1.4vw;
+    }
+
+    #headshot {
+        width: 12%;
+    }
+
+    .home-section p {
+        font-size: 1.1vw;
+    }
+
+    /* #badge-container {
+        margin-top: 3vh;
+    } */
+    
+    .badge {
+        width: 5vw;
     }
 }
