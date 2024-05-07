@@ -487,8 +487,9 @@ a {
 }
 /******* MOUSE BEHAVIOR ********/
 @media (hover: hover) {
-    a:hover {
+    .home-section a:hover {
         color: var(--highlight);
+        transform: scale(1.03);
     }
     .project-category li:hover {
         color: var(--highlight);
@@ -497,6 +498,9 @@ a {
     .project-list li:hover {
         color: var(--highlight);
         transform: scale(1.01);
+    }
+    .badge:hover {
+        transform: scale(1.1);
     }
 }
 
