@@ -4,6 +4,7 @@ function showProjects() {
     document.getElementById('headshot').style.display = 'none';
     document.querySelector('.home-section p').style.display = 'none';
     document.getElementById('about-container').classList.add('hidden');
+    document.getElementById('badge-container').classList.add('hidden');
 
     // Show projects content
     document.getElementById('project-container').classList.remove('hidden');
@@ -97,6 +98,7 @@ function showAbout() {
     document.querySelector('.home-section p').style.display = 'none';
     document.getElementById('project-container').classList.add('hidden');
     document.getElementById('project-description-container').classList.add('hidden');
+    document.getElementById('badge-container').classList.add('hidden');
 
     // Show about container
     document.getElementById('about-container').classList.remove('hidden');
@@ -121,6 +123,7 @@ function goHome() {
     // Show headshot and paragraph text
     document.getElementById('headshot').style.display = 'block';
     document.querySelector('.home-section p').style.display = 'block';
+    document.getElementById('badge-container').classList.remove('hidden');
 
     // Hide projects content
     document.getElementById('project-container').classList.add('hidden');
@@ -130,6 +133,7 @@ function goHome() {
     // Remove Animations from headshot and paragraph text
     document.getElementById('headshot').style.animation = 'none';
     document.querySelector('.home-section p').style.animation = 'none';
+    document.getElementById('badge-container').style.animation = 'none';
 }
 
 function removeDuplicateItems() {
