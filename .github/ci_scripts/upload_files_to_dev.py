@@ -16,6 +16,10 @@ excluded_paths = [
 ]
 paths_to_upload = []
 objects_to_upload = []
+session = boto3.Session(profile_name="admin-profile")
+aws_region = "us-east-1"
+s3 = session.client('s3', region_name=aws_region)
+bucket_name = "website-kris-2024-dev"
 
 items = os.listdir("../..")
 
@@ -36,3 +40,4 @@ for item in paths_to_upload:
                 objects_to_upload.append(f"{item}/{sub_item}")
 for object in objects_to_upload:
     print(object)
+    s3.upload_file(f"../../{object}", bucket_name, object)
