@@ -305,13 +305,15 @@ a {
     border: 1px solid var(--main);
     overflow-y: auto;
     scroll-behavior: smooth;
+    padding: 1%;
 }
 
 .bio p {
     font-size: 16px;
     line-height: 1.2;
-    padding: 2%;
     font-weight: 1;
+    margin-top: 1%;
+    margin-bottom: 3.5%;
 }
 
 .skills {
