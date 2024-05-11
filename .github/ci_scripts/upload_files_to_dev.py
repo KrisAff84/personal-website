@@ -5,7 +5,11 @@
 import os
 import boto3
 
-dev_bucket = "website-kris-2024-dev"
+aws_region = "us-east-1"
+bucket_name = "website-kris-2024-dev"
+website_url = f"http://{bucket_name}.s3-website-{aws_region}.amazonaws.com/"
+access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
+secret_access_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 excluded_paths = [
     ".gitignore",
     ".github",
@@ -16,10 +20,7 @@ excluded_paths = [
 ]
 paths_to_upload = []
 objects_to_upload = []
-session = boto3.Session(profile_name="admin-profile")
-aws_region = "us-east-1"
-s3 = session.client('s3', region_name=aws_region)
-bucket_name = "website-kris-2024-dev"
+
 content_type = {
     "html" : "text/html",
     "css" : "text/css",
@@ -28,6 +29,14 @@ content_type = {
  }
 items = os.listdir("../..")
 
+s3 = boto3.client(
+    's3',
+    region_name=aws_region,
+    aws_access_key_id=access_key_id,
+    aws_secret_access_key=secret_access_key
+    )
+
+# Add items to paths_to_upload if they are not in the excluded_paths list
 for item in items: 
     if item not in excluded_paths:
         paths_to_upload.append(item)
@@ -38,6 +47,7 @@ for item in paths_to_upload:
         objects_to_upload.append(item)
     else:
         sub_items = os.listdir(f"../../{item}")
+        # Add sub items to objects_to_upload if they are not in the excluded_paths list
         for sub_item in sub_items:
             if sub_item not in excluded_paths:
                 objects_to_upload.append(f"{item}/{sub_item}")
@@ -51,3 +61,6 @@ for object in objects_to_upload:
     else:
         s3.upload_file(f"../../{object}", bucket_name, object)
         print(f"Content type for {object} not found. ContentType will need to be added to file manually on the S3 console.")
+
+print(f"Files uploaded to {bucket_name} successfully.")
+print(f"Check dev website at {website_url}")
