@@ -10,6 +10,8 @@ on:
 env:
     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    BUCKET_NAME: "website-kris-2024-dev"
+    AWS_REGION: "us-east-1"
 
 jobs: 
     upload_files:
@@ -23,5 +25,8 @@ jobs:
 
             - name: Upload Files to Dev Bucket
               working-directory: .github/ci_scripts
-              run: python upload_files_to_dev.py
+              run: python upload_files_to_bucket.py
+
+            - name: Check Dev URL
+              run: echo "http://$BUCKET_NAME.s3-website-$AWS_REGION.amazonaws.com/"
               

@@ -1,13 +1,12 @@
 """ This script will upload the necessary files for the 
-    website to the dev bucket.
+    website to the specified bucket.
 """
 
 import os
 import boto3
 
-aws_region = "us-east-1"
-bucket_name = "website-kris-2024-dev"
-website_url = f"http://{bucket_name}.s3-website-{aws_region}.amazonaws.com/"
+aws_region = os.environ.get("AWS_REGION")
+bucket_name = os.environ.get("BUCKET_NAME")
 access_key_id = os.environ.get("AWS_ACCESS_KEY_ID")
 secret_access_key = os.environ.get("AWS_SECRET_ACCESS_KEY")
 excluded_paths = [
@@ -63,4 +62,3 @@ for object in objects_to_upload:
         print(f"Content type for {object} not found. ContentType will need to be added to file manually on the S3 console.")
 
 print(f"Files uploaded to {bucket_name} successfully.")
-print(f"Check dev website at {website_url}")
