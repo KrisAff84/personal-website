@@ -241,6 +241,10 @@ a {
     height: auto;
 }
 
+.project-image-animation {
+    animation: fadeIn 600ms ease;
+}
+
 #project-description-container {
     display: flex;
     flex-wrap: wrap;
@@ -630,6 +634,10 @@ a {
         animation: fadeIn 700ms ease;
     }
 
+    #project-image-container {
+        display: none;
+    }
+
     #project-description-container {
         height: auto;
         overflow-y: auto;
@@ -779,10 +787,6 @@ a {
     .home-section p {
         font-size: 1.1vw;
     }
-
-    /* #badge-container {
-        margin-top: 3vh;
-    } */
     
     .badge {
         width: 5vw;

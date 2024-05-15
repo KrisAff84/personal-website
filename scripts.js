@@ -78,6 +78,7 @@ function showProjectDescription(project) {
 
     // Show project image container
     projectImageContainer.classList.remove('hidden');
+    projectImageContainer.classList.add('project-image-animation');
 
     // Show project descriptions container
     projectContainer.classList.remove('hidden');
@@ -86,6 +87,7 @@ function showProjectDescription(project) {
     // Delay adding 'hidden' class
     setTimeout(function() {
         projectContainer.classList.remove('project-description-animation');
+        projectImageContainer.classList.remove('project-image-animation');
     }, 400);
     
     // Hide all project images
