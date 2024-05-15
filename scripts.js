@@ -8,6 +8,12 @@ function showProjects() {
 
     // Show projects content
     document.getElementById('project-container').classList.remove('hidden');
+
+    // Load Images
+    var images = document.querySelectorAll('.project-image');
+    images.forEach(function(image) {
+        image.setAttribute('loading', 'eager')
+    });
 }
 
 function showProjectList(category) {
