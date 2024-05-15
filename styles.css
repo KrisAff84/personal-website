@@ -227,9 +227,8 @@ a {
 /*********** PROJECT DESCRIPTIONS *************/
 
 #project-image-container {
-    /* border: 1px solid var(--main); */
     display: block;
-    width: 18%;
+    width: 18.17%;
     height: auto;
     margin-right: 0;
     margin-left: 1%;
@@ -242,7 +241,7 @@ a {
 }
 
 .project-image-animation {
-    animation: fadeIn 600ms ease;
+    animation: fadeInLeftToRight 275ms ease;
 }
 
 #project-description-container {
@@ -250,7 +249,7 @@ a {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
-    margin-left: 2%;
+    margin-left: 1.95%;
     border: 1px solid var(--main);
     padding-left: 1%;
     padding-right: 2%;
@@ -293,7 +292,7 @@ a {
 }
 
 .project-description-animation {
-    animation: fadeInScaleUp 320ms;
+    animation: fadeInScaleUp 275ms;
 }
 
 
