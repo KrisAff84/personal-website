@@ -229,7 +229,7 @@ a {
 #project-image-container {
     /* border: 1px solid var(--main); */
     display: block;
-    width: 18%;
+    width: 18.17%;
     height: auto;
     margin-right: 0;
     margin-left: 1%;
@@ -250,7 +250,7 @@ a {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
-    margin-left: 2%;
+    margin-left: 1.95%;
     border: 1px solid var(--main);
     padding-left: 1%;
     padding-right: 2%;
