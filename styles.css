@@ -227,7 +227,6 @@ a {
 /*********** PROJECT DESCRIPTIONS *************/
 
 #project-image-container {
-    /* border: 1px solid var(--main); */
     display: block;
     width: 18.17%;
     height: auto;
@@ -242,7 +241,7 @@ a {
 }
 
 .project-image-animation {
-    animation: fadeIn 600ms ease;
+    animation: fadeInLeftToRight 275ms ease;
 }
 
 #project-description-container {
@@ -293,7 +292,7 @@ a {
 }
 
 .project-description-animation {
-    animation: fadeInScaleUp 320ms;
+    animation: fadeInScaleUp 275ms;
 }
 
 
