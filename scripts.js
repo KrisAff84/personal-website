@@ -56,6 +56,9 @@ function hideProjectList() {
 
     // Hide project descriptions container
     document.getElementById('project-description-container').classList.add('hidden');
+
+    // Hide project image container
+    document.getElementById('project-image-container').classList.add('hidden');
 }
 
 function showProjectDescription(project) {
@@ -71,6 +74,10 @@ function showProjectDescription(project) {
     // })
 
     var projectContainer = document.getElementById('project-description-container');
+    var projectImageContainer = document.getElementById('project-image-container');
+
+    // Show project image container
+    projectImageContainer.classList.remove('hidden');
 
     // Show project descriptions container
     projectContainer.classList.remove('hidden');
@@ -81,11 +88,21 @@ function showProjectDescription(project) {
         projectContainer.classList.remove('project-description-animation');
     }, 400);
     
+    // Hide all project images
+    var projectImages = document.querySelectorAll('.project-image');
+    projectImages.forEach(function(image) {
+        image.style.display = 'none';
+    });
+
     // Hide all project descriptions
     var projectDescriptions = document.querySelectorAll('.project-description');
     projectDescriptions.forEach(function(description) {
         description.style.display = 'none';
     });
+
+    // Show the selected project image
+    var selectedImage = document.getElementById(project + 'Image');
+    selectedImage.style.display = 'block';
 
     // Show the selected project description
     var selectedDescription = document.getElementById(project + 'Description');
