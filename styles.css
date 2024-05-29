@@ -180,7 +180,7 @@ a {
 .project-category {
     width: 16%;
     height: fit-content;
-    line-height: 3.6vi;
+    line-height: 3.33vi;
     margin: 1%;
     padding: 1%;
     list-style: none;
@@ -203,7 +203,7 @@ a {
 
 .project-list {
     width: 75%;
-    height: 18vi;
+    height: 20vi;
     font-size: 1.2vw;
     line-height: 150%;
     margin: 1%;
@@ -249,7 +249,7 @@ a {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: flex-start;
-    margin-left: 1.95%;
+    margin-left: 2%;
     border: 1px solid var(--main);
     padding-left: 1%;
     padding-right: 2%;

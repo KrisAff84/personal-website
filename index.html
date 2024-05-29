@@ -69,12 +69,14 @@
             <li onclick="showProjectList('cicd')">CI/CD</li>
             <li onclick="showProjectList('containers')">Containerization</li>
             <li onclick="showProjectList('scripting')">Scripting</li>
+            <li onclick="showProjectList('networking')">Networking</li>
         </ul>
 
         <!-- Project lists to show when hovering over a category -->
 
         <ul id="awsProjects" class="project-list">
             <li onclick="showProjectDescription('codePipe')">CI/CD with CodePipeline and Terraform</li>
+            <li onclick="showProjectDescription('apiInfra')">Integrating Internal Load Balancers with API Gateway</li>
             <li onclick="showProjectDescription('musicPlayer')">Custom Music Player</li>
             <li onclick="showProjectDescription('2tierTerraform')">2-Tier Architecture with Terraform Modules</li>
             <li onclick="showProjectDescription('asgTerraform')">Autoscaling Group with Terraform Module</li>
@@ -112,10 +114,21 @@
             <li onclick="showProjectDescription('dynamoPy')">DynamoDB Automation with Python</li>
             <li onclick="showProjectDescription('pyCat')">Using Python to Catalog Files and Directories</li>
         </ul>
+        <ul id="networkingProjects" class="project-list">
+            <li onclick="showProjectDescription('apiInfra')">Integrating Internal Load Balancers with API Gateway</li>
+            <li onclick="showProjectDescription('2tierTerraform')">2-Tier Architecture with Terraform Modules</li>
+            <li onclick="showProjectDescription('cf3Tier')">CloudFormation: 3-Tier Architecture</li>
+            <li onclick="showProjectDescription('3tier')">3-Tier Architecture</li>
+            <li onclick="showProjectDescription('asgCf')">CloudFormation: EC2 Autoscaling Infrastructure</li>
+            <li onclick="showProjectDescription('ec2Auto')">EC2 Auto Scaling Group</li>
+            <li onclick="showProjectDescription('asgTerraform')">Autoscaling Group with Terraform Module</li>
+            <li onclick="showProjectDescription('musicPlayer')">Custom Music Player</li>
+        </ul>
 
-    <!-- Project descriptions to display when clicking on a project -->
+    <!-- Project images to display when clicking on a project -->
         <section id="project-image-container" class="hidden">
             <img id="codePipeImage" src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*wItndKjmeR7zMynsM3VSLQ.png" class="project-image" loading="lazy">
+            <img id="apiInfraImage" src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*zjR5XluyrFDdM91hHo7RAQ.jpeg" class="project-image" loading="lazy">
             <img id="musicPlayerImage" src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*6NGVVdf0l0ZQCjrRexG2Uw.png" class="project-image" loading="lazy">
             <img id="2tierTerraformImage" src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*7LY9Y2lr9CZHTMEnRmJ2OA.png" class="project-image" loading="lazy">
             <img id="asgTerraformImage" src="https://miro.medium.com/v2/resize:fit:750/format:webp/1*2YyNb6AG6ULW_26N2OY3gQ.png" class="project-image" loading="lazy">
@@ -134,7 +147,32 @@
             <img id="dockerBasicsImage" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*RmVLrREWU445TB06qvPCTw.jpeg" class="project-image" loading="lazy">
             <img id="pyCatImage" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*ZHkaIln2ohwsaQceIECRsQ.jpeg" class="project-image" loading="lazy">
         </section>
+        <!-- Project descriptions to display when clicking on a project -->
         <section id="project-description-container" class="hidden">
+
+            <section id="apiInfraDescription" class="project-description">
+                <h2>
+                    <a href="https://medium.com/towards-aws/cost-optimization-in-aws-refactoring-infrastructure-without-public-ipv4-addresses-6332bb415b93" target="_blank">
+                        Cost Optimization in AWS: Refactoring Infrastructure without Public IPv4 Addresses
+                    </a>
+                </h2>
+                <p>- Provides a comprehensive walkthrough on internal application load balancer access through API Gateway via VPC link.</p>
+                <p>- Discusses using API as a CloudFront origin</p>
+                <p>- Guidance on how to provision a Lambda authorizer to limit API access to CloudFront URL</p>
+                <p>- Custom header used in CloudFront, with Lambda authorizer checking for presence of required header</p>
+                <p>- Load balancer and autoscaling group provisioned in private subnets for added security</p>
+                <p>- Infrastructure Provisioned:</p>
+                <ul>
+                    <li>Custom VPC</li>
+                    <li>2 Private Subnets</li>
+                    <li>Internal Application Load Balancer</li>
+                    <li>Autoscaling group</li>
+                    <li>VPC Link</li>
+                    <li>HTTP API</li>
+                    <li>CloudFront Distribution</li>
+                    <li>Lambda Authorizer</li>
+                </ul>
+            </section>
 
             <section id="codePipeDescription" class="project-description">
                 <h2>
